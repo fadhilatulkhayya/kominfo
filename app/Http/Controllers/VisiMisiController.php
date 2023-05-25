@@ -53,14 +53,14 @@ class VisiMisiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateVisiMisiRequest $request, $visiMisi)
+    public function update(UpdateVisiMisiRequest $request, VisiMisi $visiMisi)
     {
         $validateData = $request->validate([
             'visi' => 'required',
             'misi' => 'required'
         ]);
 
-        VisiMisi::where('id', $visiMisi->id)->update($validateData);
+        $visiMisi->update($validateData);
         return redirect()->route('visimisi.index');
     }
 

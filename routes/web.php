@@ -52,16 +52,16 @@ Route::get('/beranda_admin', function () {
 Route::get('/menu_kepala_dinas', function () {
     return view('admin.profil.kepala_dinas.index');
 });
-
-Route::resource('visimisi', VisiMisiController::class);
-
-Route::get('/menu_tupoksi', function () {
-    return view('admin.profil.tupoksi.index');
-});
 Route::get('/menu_struktur_organisasi', function () {
     return view('admin.profil.struktur_organisasi.index');
 });
 
+//fungsi update blm jalan
+Route::resource('visimisi', VisiMisiController::class);
+
+Route::get('menu_tupoksi', function () {
+    return view('admin.profil.tupoksi.index');
+});
 
 Route::get('/menu_majalah', function () {
     return view('admin.majalah.index');

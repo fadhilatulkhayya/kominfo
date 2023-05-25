@@ -28,7 +28,8 @@
                                     <td>{{ $visimisi->visi }}</td>
                                     <td>{{ $visimisi->misi }}</td>
                                     <td>
-                                        {{-- <a href="{{ route('visimisi.edit') }}" class="btn btn-sm btn-warning">Edit</a> --}}
+                                        <a href="{{ route('visimisi.edit', $visimisi->id) }}"
+                                            class="btn btn-sm btn-warning">Edit</a>
                                     </td>
                                 </tr>
                             @empty

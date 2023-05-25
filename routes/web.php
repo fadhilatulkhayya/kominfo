@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VisiMisiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,63 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route Dashboard Start
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard.home');
+});
+Route::get('/majalah', function () {
+    return view('dashboard.majalah');
+});
+Route::get('/layanan', function () {
+    return view('dashboard.layanan');
+});
+Route::get('/berita', function () {
+    return view('dashboard.berita');
+});
+
+//Route Dashboard Profil
+Route::get('/kepala-dinas', function () {
+    return view('dashboard.profil.kepaladinas');
+});
+Route::get('/visi-misi', function () {
+    return view('dashboard.profil.visimisi');
+});
+Route::get('/tupoksi', function () {
+    return view('dashboard.profil.tupoksi');
+});
+Route::get('/struktur-organisasi', function () {
+    return view('dashboard.profil.strukturorganisasi');
+});
+// Route Dashboard End
+
+
+//Route Admin
+Route::get('/beranda_admin', function () {
+    return view('admin.index');
+});
+Route::get('/menu_kepala_dinas', function () {
+    return view('admin.profil.kepala_dinas.index');
+});
+
+Route::resource('visimisi', VisiMisiController::class);
+
+Route::get('/menu_tupoksi', function () {
+    return view('admin.profil.tupoksi.index');
+});
+Route::get('/menu_struktur_organisasi', function () {
+    return view('admin.profil.struktur_organisasi.index');
+});
+
+
+Route::get('/menu_majalah', function () {
+    return view('admin.majalah.index');
+});
+
+Route::get('/menu_layanan', function () {
+    return view('admin.layanan.index');
+});
+
+Route::get('/menu_berita', function () {
+    return view('admin.berita.index');
 });

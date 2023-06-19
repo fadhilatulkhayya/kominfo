@@ -1,8 +1,5 @@
 <?php
 
-use App\Http\Controllers\KepalaDinasController;
-use App\Http\Controllers\TupoksiController;
-use App\Http\Controllers\VisiMisiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,28 +45,9 @@ Route::get('/struktur-organisasi', function () {
 
 
 //Route Admin
-Route::get('/beranda_admin', function () {
-    return view('admin.index');
-});
 
-Route::get('/menu_struktur_organisasi', function () {
-    return view('admin.profil.struktur_organisasi.index');
-});
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
-Route::resource('kepaladinas', KepalaDinasController::class);
-
-Route::resource('visimisi', VisiMisiController::class);
-
-Route::resource('tupoksi', TupoksiController::class);
-
-Route::get('/menu_majalah', function () {
-    return view('admin.majalah.index');
-});
-
-Route::get('/menu_layanan', function () {
-    return view('admin.layanan.index');
-});
-
-Route::get('/menu_berita', function () {
-    return view('admin.berita.index');
+    // Dashboard
+    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 });

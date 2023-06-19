@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KepalaDinasController;
+use App\Http\Controllers\TupoksiController;
 use App\Http\Controllers\VisiMisiController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,7 +38,7 @@ Route::get('/kepala-dinas', function () {
 Route::get('/visi-misi', function () {
     return view('dashboard.profil.visimisi');
 });
-Route::get('/tupoksi', function () {
+Route::get('/menu-tupoksi', function () {
     return view('dashboard.profil.tupoksi');
 });
 Route::get('/struktur-organisasi', function () {
@@ -49,19 +51,16 @@ Route::get('/struktur-organisasi', function () {
 Route::get('/beranda_admin', function () {
     return view('admin.index');
 });
-Route::get('/menu_kepala_dinas', function () {
-    return view('admin.profil.kepala_dinas.index');
-});
+
 Route::get('/menu_struktur_organisasi', function () {
     return view('admin.profil.struktur_organisasi.index');
 });
 
-//fungsi update blm jalan
+Route::resource('kepaladinas', KepalaDinasController::class);
+
 Route::resource('visimisi', VisiMisiController::class);
 
-Route::get('menu_tupoksi', function () {
-    return view('admin.profil.tupoksi.index');
-});
+Route::resource('tupoksi', TupoksiController::class);
 
 Route::get('/menu_majalah', function () {
     return view('admin.majalah.index');

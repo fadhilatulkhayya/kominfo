@@ -1,6 +1,6 @@
   @extends('dashboard')
   @section('title', 'Visi & Misi')
-  @section('menuProfil', 'active');
+  @section('menuProfil', 'active')
 
   @section('content')
 

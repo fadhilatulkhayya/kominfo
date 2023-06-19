@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tupoksis', function (Blueprint $table) {
             $table->id();
-            
+            $table->text('isi_tupoksi');
             $table->timestamps();
         });
     }

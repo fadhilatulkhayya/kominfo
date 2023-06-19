@@ -13,7 +13,8 @@ class TupoksiController extends Controller
      */
     public function index()
     {
-        //
+        $tupoksis = Tupoksi::all();
+        return view('admin.profil.tupoksi.index', compact('tupoksis'));
     }
 
     /**
@@ -45,7 +46,7 @@ class TupoksiController extends Controller
      */
     public function edit(Tupoksi $tupoksi)
     {
-        //
+        return view('admin.profil.tupoksi.edit', compact('tupoksi'));
     }
 
     /**
@@ -53,7 +54,11 @@ class TupoksiController extends Controller
      */
     public function update(UpdateTupoksiRequest $request, Tupoksi $tupoksi)
     {
-        //
+
+        $attr = $request->validated();
+
+        $tupoksi->update($attr);
+        return redirect()->route('tupoksi.index');
     }
 
     /**

@@ -65,7 +65,7 @@
                                 <ul>
                                     <li><a href="/kepala-dinas">Kepala Dinas</a></li>
                                     <li><a href="/visi-misi">Visi & Misi</a></li>
-                                    <li><a href="/tupoksi">Tugas Pokok & Fungsi</a></li>
+                                    <li><a href="/menu-tupoksi">Tugas Pokok & Fungsi</a></li>
                                     <li><a href="/struktur-organisasi">Struktur Organisasi</a>
                                     </li>
                                 </ul>

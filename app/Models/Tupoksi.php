@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tupoksi extends Model
 {
     use HasFactory;
+    
+    protected $fillable = ['isi_tupoksi'];
 }

@@ -36,7 +36,7 @@ class VisiMisiController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(VisiMisi $visiMisi)
+    public function show(VisiMisi $visimisi)
     {
         //
     }
@@ -44,30 +44,26 @@ class VisiMisiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($visiMisi)
+    public function edit(VisiMisi $visimisi)
     {
-        $visimisi = VisiMisi::find($visiMisi);
-        return view('admin.profil.visi_misi.edit')->with('visimisi', $visimisi);
+        return view('admin.profil.visi_misi.edit', compact('visimisi'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateVisiMisiRequest $request, VisiMisi $visiMisi)
+    public function update(UpdateVisiMisiRequest $request, VisiMisi $visimisi)
     {
-        $validateData = $request->validate([
-            'visi' => 'required',
-            'misi' => 'required'
-        ]);
+        $attr = $request->validated();
 
-        $visiMisi->update($validateData);
+        $visimisi->update($attr);
         return redirect()->route('visimisi.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(VisiMisi $visiMisi)
+    public function destroy(VisiMisi $visimisi)
     {
         //
     }

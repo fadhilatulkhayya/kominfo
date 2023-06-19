@@ -11,7 +11,7 @@ class UpdateTupoksiRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class UpdateTupoksiRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'isi_tupoksi' => 'required|min:3',
         ];
     }
 }

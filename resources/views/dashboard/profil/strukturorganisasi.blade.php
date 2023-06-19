@@ -1,6 +1,6 @@
   @extends('dashboard')
   @section('title', 'Struktur Organisasi')
-@section('menuProfil', 'active');
+  @section('menuProfil', 'active')
 
   @section('content')
 

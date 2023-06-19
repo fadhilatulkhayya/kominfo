@@ -11,7 +11,7 @@ class UpdateVisiMisiRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,8 @@ class UpdateVisiMisiRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'visi' => 'required|min:3',
+            'misi' => 'required|min:3',
         ];
     }
 }

@@ -50,4 +50,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     // Dashboard
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+
+    // Service
+    Route::resource('/services', App\Http\Controllers\Admin\ServiceController::class);
 });

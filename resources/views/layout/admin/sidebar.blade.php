@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item @yield('menuLayanan')">
-                    <a href="/menu_layanan" class='sidebar-link'>
+                    <a href="{{ route('admin.services.index') }}" class='sidebar-link'>
                         <i class="bi bi-window" width="20"></i>
                         <span>Layanan</span>
                     </a>

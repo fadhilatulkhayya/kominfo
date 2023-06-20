@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\StoreServiceRequest;
-use App\Http\Requests\Admin\UpdateServiceRequest;
+use App\Http\Requests\Admin\Service\StoreServiceRequest;
+use App\Http\Requests\Admin\Service\UpdateServiceRequest;
 use App\Models\Service;
+use Intervention\Image\Facades\Image;
 
 class ServiceController extends Controller
 {
@@ -31,7 +32,26 @@ class ServiceController extends Controller
      */
     public function store(StoreServiceRequest $request)
     {
-        //
+        $attr = $request->validated();
+
+        if ($request->hasFile('thumbnail') && $request->file('thumbnail')->isValid()) {
+            $path = storage_path('app/public/upload/layanan/');
+            $filename = $request->file('thumbnail')->hashName();
+
+            if (!file_exists($path)) {
+                mkdir($path, 0777, true);
+            }
+
+            Image::make($request->file('thumbnail')->getRealPath())->resize(500, 500, function ($constraint) {
+                $constraint->upsize();
+                $constraint->aspectRatio();
+            })->save($path . $filename);
+
+            $attr['thumbnail'] = $filename;
+        }
+
+        Service::create($attr);
+        return redirect()->route('admin.services.index')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -55,6 +75,31 @@ class ServiceController extends Controller
      */
     public function update(UpdateServiceRequest $request, Service $service)
     {
+        $attr = $request->validated();
+
+        if ($request->hasFile('thumbnail') && $request->file('thumbnail')->isValid()) {
+            $path = storage_path('app/public/upload/layanan/');
+            $filename = $request->file('thumbnail')->hashName();
+
+            if (!file_exists($path)) {
+                mkdir($path, 0777, true);
+            }
+
+            Image::make($request->file('thumbnail')->getRealPath())->resize(500, 500, function ($constraint) {
+                $constraint->upsize();
+                $constraint->aspectRatio();
+            })->save($path . $filename);
+
+            // delete old thumbnail from storage
+            if ($service->thumbnail != null && file_exists($path . $service->thumbnail)) {
+                unlink($path . $service->thumbnail);
+            }
+
+            $attr['thumbnail'] = $filename;
+        }
+
+        $service->update($attr);
+        return redirect()->route('admin.services.index')->with('success', 'Data Berhasil Diubah');
     }
 
     /**
@@ -62,6 +107,21 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        try {
+            // determine path thumbnail
+            $path = storage_path('app/public/upload/layanan/');
+
+            // if thumbnail exist remove file from directory
+            if ($service->thumbnail != null && file_exists($path . $service->thumbnail)) {
+                unlink($path . $service->thumbnail);
+            }
+
+            $service->delete();
+            return redirect()->route('admin.services.index')->with('success', 'Data Berhasil Dihapus');
+        } catch (\Throwable $th) {
+            return redirect()
+                ->route('admin.services.index')
+                ->with('error', __($th->getMessage()));
+        }
     }
 }

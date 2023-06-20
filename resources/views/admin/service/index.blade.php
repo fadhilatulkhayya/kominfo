@@ -11,7 +11,13 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                    Daftar Layanan Diskominfo Bone Bolango
+                    Daftar Layanan
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="{{ route('admin.services.create') }}" class="btn btn-md btn-primary">Tambah
+                                data</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <table class='table table-striped' id="table1">
@@ -29,11 +35,12 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $service->url }}</td>
                                     <td>{{ $service->name }}</td>
-                                    <td>
-                                        <span class="badge bg-warning">Edit</span>
-                                    </td>
+                                    <td>@include('admin.service.include.action')</td>
                                 </tr>
                             @empty
+                                <tr>
+                                    <td colspan="4" class="text-center">Maaf, belum ada data</td>
+                                </tr>
                             @endforelse
                         </tbody>
                     </table>

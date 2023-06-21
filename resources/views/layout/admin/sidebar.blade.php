@@ -16,7 +16,7 @@
                 <li class="sidebar-title">Menu</li>
 
                 <li class="sidebar-item @yield('menuDashboard')">
-                    <a href="/beranda_admin" class='sidebar-link'>
+                    <a href="{{ route('admin.dashboard') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
@@ -29,13 +29,13 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="{{ route('kepaladinas.index') }}">Kepala Dinas</a>
+                            <a href="">Kepala Dinas</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="{{ route('visimisi.index') }}">Visi & Misi</a>
+                            <a href="">Visi & Misi</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="{{ route('tupoksi.index') }}">Tugas Pokok & Fungsi</a>
+                            <a href="">Tugas Pokok & Fungsi</a>
                         </li>
                         <li class="submenu-item ">
                             <a href="/menu_struktur_organisasi">Struktur Organisasi</a>
@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item @yield('menuLayanan')">
-                    <a href="/menu_layanan" class='sidebar-link'>
+                    <a href="{{ route('admin.services.index') }}" class='sidebar-link'>
                         <i class="bi bi-window" width="20"></i>
                         <span>Layanan</span>
                     </a>

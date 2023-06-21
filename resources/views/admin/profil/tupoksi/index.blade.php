@@ -32,7 +32,7 @@
                                         <tbody>
                                             @forelse ($tupoksis as $tupoksi)
                                                 <tr>
-                                                    <td>{{ $tupoksi->isi_tupoksi }}</td>
+                                                    <td>{!! substr(strip_tags($tupoksi->isi_tupoksi), 0, 488) !!}</td>
                                                     <td>
                                                         <a href="{{ route('tupoksi.edit', $tupoksi->id) }}"
                                                             class="btn btn-sm btn-warning">Edit</a>

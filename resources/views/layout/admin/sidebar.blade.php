@@ -29,7 +29,7 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="{{ route('kepaladinas.index') }}">Kepala Dinas</a>
+                            <a href="{{ route('kepaladinas.index') }}">Sambutan Kepala Dinas</a>
                         </li>
                         <li class="submenu-item ">
                             <a href="{{ route('visimisi.index') }}">Visi & Misi</a>
@@ -53,12 +53,6 @@
                     <a href="/menu_layanan" class='sidebar-link'>
                         <i class="bi bi-window" width="20"></i>
                         <span>Layanan</span>
-                    </a>
-                </li>
-                <li class="sidebar-item @yield('menuBerita')">
-                    <a href="/menu_berita" class='sidebar-link'>
-                        <i class="bi bi-newspaper" width="20"></i>
-                        <span>Berita</span>
                     </a>
                 </li>
 

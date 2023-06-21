@@ -13,8 +13,8 @@ class KepalaDinasController extends Controller
      */
     public function index()
     {
-        $kepaladinas = KepalaDinas::all();
-        return view('admin.profil.kepala_dinas.index', compact('kepaladinas'));
+        $kepaladina = KepalaDinas::all();
+        return view('admin.profil.kepala_dinas.index', compact('kepaladina'));
     }
 
     /**
@@ -44,17 +44,31 @@ class KepalaDinasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(KepalaDinas $kepalaDinas)
+    public function edit(KepalaDinas $kepaladina)
     {
-        //
+        return view('admin.profil.kepala_dinas.edit', compact('kepaladina'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateKepalaDinasRequest $request, KepalaDinas $kepalaDinas)
+    public function update(UpdateKepalaDinasRequest $request, KepalaDinas $kepaladina)
     {
-        //
+        $attr = $request->validate();
+
+        if ($photo = $request->file('photo')) {
+            $destinationPath = 'app/public/upload/berita/';
+            $profileImage = date('YmdHis') . "." . $photo->getClientOriginalExtension();
+            $photo->move($destinationPath, $profileImage);
+            $attr['photo'] = "$profileImage";
+
+            if ($kepaladina->photo != null && file_exists($destinationPath . $kepaladina->photo)) {
+                unlink($destinationPath . $kepaladina->photo);
+            }
+        }
+
+        $kepaladina->update($attr);
+        return redirect()->route('kepaladinas.index');
     }
 
     /**

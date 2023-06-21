@@ -34,7 +34,7 @@
                                                     <textarea name="isi_tupoksi" id="summernote" cols="30" rows="10">{{ $tupoksi->isi_tupoksi }}</textarea>
                                                 </div>
                                                 <div class="col-12 d-flex justify-content-end">
-                                                    <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -55,7 +55,7 @@
         <script>
             $('#summernote').summernote({
                 tabsize: 2,
-                height: 120,
+                height: 450,
             })
         </script>
     @endpush

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('kepala_dinas', function (Blueprint $table) {
             $table->id();
             $table->text('sambutan');
-            $table->string('photo ');
+            $table->string('photo');
             $table->timestamps();
         });
     }

@@ -3,39 +3,56 @@
 @section('menuProfil', 'active')
 
 @section('content')
-    <div class="main-content container-fluid">
-        <div class="page-title">
-            <h3>Profil/Kepala Dinas</h3>
-            <br>
+    <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
+
+        <div class="page-heading">
+            <h3>Profil/ Sambutan Kepala Dinas</h3>
         </div>
-        <section class="section">
-            <div class="card">
-                {{-- <div class="card-header">
-                    Sambutan Kepala Dinas
-                </div> --}}
-                <div class="card-body">
-                    <table class='table table-striped' id="table1">
-                        <thead>
-                            <tr>
-                                <th>Kepala Dinas</th>
-                                <th>Gambar</th>
-                                <th>Kata Sambutan</th>
-                                <th>Opsi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Graiden</td>
-                                <td>vehicula.aliquet@semconsequat.co.uk</td>
-                                <td>076 4820 8838</td>
-                                <td>
-                                    <span class="badge bg-warning">Edit</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <div class="page-content">
+            <section class="row">
+                <div class="col-12 col-lg-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                </div>
+                                <div class="card-body">
+                                    <table class='table table-striped' id="table1">
+                                        <thead>
+                                            <tr>
+                                                <th>Kepala Dinas</th>
+                                                <th>Kata Sambutan Kepala Dinas</th>
+                                                <th>Opsi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @forelse ($kepaladina as $kepaladina)
+                                                <tr>
+                                                    <td><img src="{{ asset('storage/profile/' . $kepaladina->photo) }}"
+                                                            class="img-thumbnail" width="200" height="150"
+                                                            style="object-fit: cover" /></td>
+                                                    <td>{{ Str::limit($kepaladina->sambutan, 415) }}</td>
+                                                    <td>
+                                                        <a href="{{ route('kepaladinas.edit', $kepaladina->id) }}"
+                                                            class="btn btn-sm btn-warning">Edit</a>
+                                                    </td>
+                                                </tr>
+                                            @empty
+                                            @endforelse
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </div>
-@endsection
+
+            </section>
+        </div>
+    @endsection

@@ -63,17 +63,16 @@
                             <li class="submenu">
                                 <a href="#" class="@yield('menuProfil')">Profil</a>
                                 <ul>
-                                    <li><a href="/kepala-dinas">Kepala Dinas</a></li>
-                                    <li><a href="/visi-misi">Visi & Misi</a></li>
+                                    <li><a href="/menu-kepala-dinas">Kepala Dinas</a></li>
+                                    <li><a href="/menu-visi-misi">Visi & Misi</a></li>
                                     <li><a href="/menu-tupoksi">Tugas Pokok & Fungsi</a></li>
-                                    <li><a href="/struktur-organisasi">Struktur Organisasi</a>
+                                    <li><a href="/menu-struktur-organisasi">Struktur Organisasi</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="/majalah" class="@yield('menuEMagazine')">E-Magazine</a></li>
+                            <li><a href="/menu-majalah" class="@yield('menuEMagazine')">E-Magazine</a></li>
                             </li>
-                            <li><a href="/layanan" class="@yield('menuLayanan')">Layanan</a></li>
-                            <li><a href="/berita" class="@yield('menuBerita')">Berita</a></li>
+                            <li><a href="/menu-layanan" class="@yield('menuLayanan')">Layanan</a></li>
                             <li></li>
                         </ul>
                         <a class='menu-trigger'>

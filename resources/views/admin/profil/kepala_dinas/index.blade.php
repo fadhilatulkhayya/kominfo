@@ -31,12 +31,12 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($kepaladina as $kepaladina)
+                                            @forelse ($kepaladinas as $kepaladina)
                                                 <tr>
                                                     <td><img src="{{ asset('storage/profile/' . $kepaladina->photo) }}"
                                                             class="img-thumbnail" width="200" height="150"
                                                             style="object-fit: cover" /></td>
-                                                    <td>{{ Str::limit($kepaladina->sambutan, 415) }}</td>
+                                                    <td>{!! substr(strip_tags($kepaladina->sambutan), 0, 418) !!}</td>
                                                     <td>
                                                         <a href="{{ route('kepaladinas.edit', $kepaladina->id) }}"
                                                             class="btn btn-sm btn-warning">Edit</a>

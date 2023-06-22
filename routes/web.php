@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\KepalaDinasController;
+use App\Http\Controllers\MajalahController;
+use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\TupoksiController;
 use App\Http\Controllers\VisiMisiController;
 use Illuminate\Support\Facades\Route;
@@ -21,27 +23,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard.home');
 });
-Route::get('/majalah', function () {
+Route::get('/menu-majalah', function () {
     return view('dashboard.majalah');
 });
-Route::get('/layanan', function () {
+Route::get('/menu-layanan', function () {
     return view('dashboard.layanan');
-});
-Route::get('/berita', function () {
-    return view('dashboard.berita');
 });
 
 //Route Dashboard Profil
-Route::get('/kepala-dinas', function () {
+Route::get('/menu-kepala-dinas', function () {
     return view('dashboard.profil.kepaladinas');
 });
-Route::get('/visi-misi', function () {
+Route::get('/menu-visi-misi', function () {
     return view('dashboard.profil.visimisi');
 });
 Route::get('/menu-tupoksi', function () {
     return view('dashboard.profil.tupoksi');
 });
-Route::get('/struktur-organisasi', function () {
+Route::get('/menu-struktur-organisasi', function () {
     return view('dashboard.profil.strukturorganisasi');
 });
 // Route Dashboard End
@@ -52,9 +51,7 @@ Route::get('/beranda_admin', function () {
     return view('admin.index');
 });
 
-Route::get('/menu_struktur_organisasi', function () {
-    return view('admin.profil.struktur_organisasi.index');
-});
+Route::resource('strukturorganisasi', StrukturOrganisasiController::class);
 
 Route::resource('kepaladinas', KepalaDinasController::class);
 
@@ -62,14 +59,6 @@ Route::resource('visimisi', VisiMisiController::class);
 
 Route::resource('tupoksi', TupoksiController::class);
 
-Route::get('/menu_majalah', function () {
-    return view('admin.majalah.index');
-});
+Route::resource('majalah', MajalahController::class);
 
-Route::get('/menu_layanan', function () {
-    return view('admin.layanan.index');
-});
-
-Route::get('/menu_berita', function () {
-    return view('admin.berita.index');
-});
+// Route::resource('layanan', LayananC::class);

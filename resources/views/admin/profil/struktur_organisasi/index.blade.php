@@ -31,15 +31,19 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Graiden</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, modi
-                                                    dignissimos
-                                                    excepturi similique</td>
-                                                <td>
-                                                    <span class="badge bg-warning">Edit</span>
-                                                </td>
-                                            </tr>
+                                            @forelse ($strukturorganisasis as $strukturorganisasi)
+                                                <tr>
+                                                    <td><img src="{{ asset('storage/profile/' . $strukturorganisasi->gambar) }}"
+                                                            class="img-thumbnail" width="200" height="150"
+                                                            style="object-fit: cover" /></td>
+                                                    <td>{{ Str::limit($strukturorganisasi->caption, 100) }}</td>
+                                                    <td>
+                                                        <a href="{{ route('strukturorganisasi.edit', $strukturorganisasi->id) }}"
+                                                            class="btn btn-sm btn-warning">Edit</a>
+                                                    </td>
+                                                </tr>
+                                            @empty
+                                            @endforelse
                                         </tbody>
                                     </table>
                                 </div>

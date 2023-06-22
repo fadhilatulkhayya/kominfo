@@ -29,13 +29,19 @@
                                                 <div class="col-md-12 col-12">
                                                     <div class="form-group">
                                                         <label for="first-name-column">Visi : </label>
-                                                        <textarea class="form-control" rows="3" name="visi">{{ $visimisi->visi }}</textarea>
+                                                        <textarea class="form-control @error('visi') is-invalid @enderror" rows="3" name="visi">{{ $visimisi->visi }}</textarea>
+                                                        @error('visi')
+                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12 col-12">
                                                     <div class="form-group">
                                                         <label for="last-name-column">Misi : </label>
-                                                        <textarea class="form-control" rows="3" name="misi">{{ $visimisi->misi }}</textarea>
+                                                        <textarea class="form-control @error('misi') is-invalid @enderror" rows="3" name="misi">{{ $visimisi->misi }}</textarea>
+                                                        @error('misi')
+                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-12 d-flex justify-content-end">

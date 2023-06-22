@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateKepalaDinasRequest extends FormRequest
+class UpdateStrukturOrganisasiRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,8 @@ class UpdateKepalaDinasRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'sambutan' => 'required|min:20',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048'
+            'caption' => 'required|min:3',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:2048'
         ];
     }
 }

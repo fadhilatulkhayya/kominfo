@@ -31,7 +31,11 @@
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-12 col-12 mb-2">
-                                                    <textarea name="isi_tupoksi" id="summernote" cols="30" rows="10">{{ $tupoksi->isi_tupoksi }}</textarea>
+                                                    <textarea class="form-control @error('isi_tupoksi') is-invalid @enderror" name="isi_tupoksi" id="summernote" cols="30"
+                                                        rows="10">{{ $tupoksi->isi_tupoksi }}</textarea>
+                                                        @error('isi_tupoksi')
+                                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                                @enderror
                                                 </div>
                                                 <div class="col-12 d-flex justify-content-end">
                                                     <button type="submit" class="btn btn-primary">Submit</button>

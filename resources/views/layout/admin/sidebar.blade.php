@@ -38,19 +38,19 @@
                             <a href="{{ route('tupoksi.index') }}">Tugas Pokok & Fungsi</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="/menu_struktur_organisasi">Struktur Organisasi</a>
+                            <a href="{{ route('strukturorganisasi.index') }}">Struktur Organisasi</a>
                         </li>
                     </ul>
                 </li>
 
                 <li class="sidebar-item @yield('menuMajalah')">
-                    <a href="/menu_majalah" class='sidebar-link'>
+                    <a href="{{ route('majalah.index') }}" class='sidebar-link'>
                         <i class="bi bi-file-earmark-richtext-fill"></i>
                         <span>E-Magazine</span>
                     </a>
                 </li>
                 <li class="sidebar-item @yield('menuLayanan')">
-                    <a href="/menu_layanan" class='sidebar-link'>
+                    <a href="" class='sidebar-link'>
                         <i class="bi bi-window" width="20"></i>
                         <span>Layanan</span>
                     </a>

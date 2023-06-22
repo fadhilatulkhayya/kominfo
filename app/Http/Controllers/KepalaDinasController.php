@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreKepalaDinasRequest;
 use App\Http\Requests\UpdateKepalaDinasRequest;
 use App\Models\KepalaDinas;
+use Intervention\Image\Facades\Image;
 
 class KepalaDinasController extends Controller
 {
@@ -13,8 +14,8 @@ class KepalaDinasController extends Controller
      */
     public function index()
     {
-        $kepaladina = KepalaDinas::all();
-        return view('admin.profil.kepala_dinas.index', compact('kepaladina'));
+        $kepaladinas = KepalaDinas::all();
+        return view('admin.profil.kepala_dinas.index', compact('kepaladinas'));
     }
 
     /**
@@ -36,7 +37,7 @@ class KepalaDinasController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(KepalaDinas $kepalaDinas)
+    public function show(KepalaDinas $kepalaDina)
     {
         //
     }
@@ -54,27 +55,39 @@ class KepalaDinasController extends Controller
      */
     public function update(UpdateKepalaDinasRequest $request, KepalaDinas $kepaladina)
     {
-        $attr = $request->validate();
+        $attr = $request->validated();
 
-        if ($photo = $request->file('photo')) {
-            $destinationPath = 'app/public/upload/berita/';
-            $profileImage = date('YmdHis') . "." . $photo->getClientOriginalExtension();
-            $photo->move($destinationPath, $profileImage);
-            $attr['photo'] = "$profileImage";
+        if ($request->file('photo') && $request->file('photo')->isValid()) {
 
-            if ($kepaladina->photo != null && file_exists($destinationPath . $kepaladina->photo)) {
-                unlink($destinationPath . $kepaladina->photo);
+            $path = storage_path('app/public/profile/');
+            $filename = $request->file('photo')->hashName();
+
+            if (!file_exists($path)) {
+                mkdir($path, 0777, true);
             }
+
+            Image::make($request->file('photo')->getRealPath())->resize(500, 500, function ($constraint) {
+                $constraint->upsize();
+                $constraint->aspectRatio();
+            })->save($path . $filename);
+
+            // delete old thumbnail from storage
+            if ($kepaladina->photo != null && file_exists($path . $kepaladina->photo)) {
+                unlink($path . $kepaladina->photo);
+            }
+
+            $attr['photo'] = $filename;
         }
 
         $kepaladina->update($attr);
+
         return redirect()->route('kepaladinas.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(KepalaDinas $kepalaDinas)
+    public function destroy(KepalaDinas $kepalaDina)
     {
         //
     }

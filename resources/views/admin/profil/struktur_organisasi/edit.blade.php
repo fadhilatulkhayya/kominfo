@@ -43,7 +43,7 @@
                                                                     <label for="photo" class="form-label">Gambar
                                                                         Lama</label>
                                                                     <br>
-                                                                    <img src="{{ asset('storage/profile/' . $strukturorganisasi->gambar) }}"
+                                                                    <img src="{{ asset('storage/upload/profile/' . $strukturorganisasi->gambar) }}"
                                                                         alt="gambar" class="img-thumbnail" width="250"
                                                                         height="250" style="object-fit: cover">
                                                                 @endif
@@ -52,7 +52,7 @@
                                                         <div class="col-md-9">
                                                             <div class="form-group">
                                                                 <label for="gambar" class="form-label">Pilih Gambar
-                                                                    Terbaru :</label>
+                                                                    Terbaru<span class="text-danger"> &#42;</span> :</label>
                                                                 <input
                                                                     class="form-control @error('gambar') is-invalid @enderror"
                                                                     type="file" name="gambar" />
@@ -64,7 +64,8 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-12 mb-2">
-                                                            <label for="caption">Caption : </label>
+                                                            <label for="caption">Caption<span class="text-danger">
+                                                                    &#42;</span> :</label>
                                                             <textarea class="form-control @error('caption') is-invalid @enderror" rows="3" name="caption">{{ $strukturorganisasi->caption }}</textarea>
                                                             @error('caption')
                                                                 <div class="invalid-feedback">{{ $message }}</div>

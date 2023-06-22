@@ -1,5 +1,5 @@
 @extends('admin')
-@section('title', 'Diskominfo Bone Bolango - E-Magazine')
+@section('title', 'Diskominfo Bone Bolango - Majalah')
 @section('menuMajalah', 'active')
 
 @section('content')
@@ -20,7 +20,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <a class="btn btn-sm btn-primary" href="{{ route('majalah.create') }}">
+                                    <a class="btn btn-sm btn-primary" href="{{ route('admin.majalah.create') }}">
                                         Tambah Data</a>
                                 </div>
                                 <div class="card-body">
@@ -35,27 +35,23 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @php
-                                                $i = 1;
-                                            @endphp
-                                            @forelse ($majalahs as $majalah)
+                                            @forelse($majalahs as $majalah)
                                                 <tr>
-                                                    <td>{{ $i++ }}</td>
-                                                    <td><img src="{{ asset('storage/majalah/' . $majalah->cover) }}"
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td><img src="{{ asset('storage/upload/majalah/' . $majalah->cover) }}"
                                                             class="img-thumbnail" width="200" height="150"
                                                             style="object-fit: cover" /></td>
                                                     <td><a
-                                                            href="{{ url('storage/majalah/' . $majalah->file) }}">Download</a>
+                                                            href="{{ url('storage/upload/majalah/' . $majalah->file) }}">{{ $majalah->name }}</a>
                                                     </td>
                                                     <td>{{ $majalah->name }}</td>
-                                                    <td>
-                                                        <a href="{{ route('majalah.edit', $majalah->id) }}"
-                                                            class="btn btn-sm btn-warning">Edit</a>
-                                                    </td>
+                                                    <td>@include('admin.majalah.include.action')</td>
                                                 </tr>
                                             @empty
+                                                <tr>
+                                                    <td colspan="4" class="text-center">Maaf, belum ada data</td>
+                                                </tr>
                                             @endforelse
-
                                         </tbody>
                                     </table>
                                 </div>

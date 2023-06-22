@@ -22,10 +22,10 @@ class StoreMajalahRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'require|min:10',
-            'cover' => 'require|image|mimes:jpeg,png,jpg|max:2048',
-            'slug' => 'require|min:10',
-            'file' => 'require|mimes:pdf|max:2048'
+            'name' => 'required|min:10',
+            'cover' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'slug' => 'required|min:10',
+            'file' => 'required|mimes:pdf|max:20000'
         ];
     }
 }

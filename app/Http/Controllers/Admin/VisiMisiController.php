@@ -14,7 +14,8 @@ class VisiMisiController extends Controller
      */
     public function index()
     {
-        $visimisis = VisiMisi::all();
+        $visimisis =
+            VisiMisi::latest()->get();
         return view('admin.profil.visi_misi.index', compact('visimisis'));
     }
 

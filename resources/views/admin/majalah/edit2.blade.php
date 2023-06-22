@@ -1,10 +1,6 @@
 @extends('admin')
-@section('title', 'Diskominfo Bone Bolango - Edit Kepala Dinas')
+@section('title', 'Diskominfo Bone Bolango - Edit Majalah')
 @section('menuProfil', 'active')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('template/admin') }}/vendors/summernote/summernote-lite.min.css">
-@endpush
 
 @section('content')
     <div id="main">
@@ -15,7 +11,7 @@
         </header>
 
         <div class="page-heading">
-            <h3>Edit Sambutan Kepala Dinas</h3>
+            <h3>Edit E-Magazine</h3>
         </div>
         <div class="page-content">
             <section class="row">
@@ -25,8 +21,7 @@
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form"
-                                            action="{{ route('admin.kepaladinas.update', $kepaladina->id) }}"
+                                        <form class="form" action="{{ route('admin.majalah.update', $majalah->id) }}"
                                             enctype="multipart/form-data" method="post">
                                             @method('PUT')
                                             @csrf
@@ -35,45 +30,42 @@
                                                     <div class="row">
                                                         <div class="col-md-3">
                                                             <div class="form-group">
-                                                                @if ($kepaladina->photo == null)
-                                                                    <label for="photo" class="form-label">Gambar
-                                                                        Lama </label>
+                                                                @if ($majalah->cover == null)
+                                                                    <label for="cover" class="form-label">Cover
+                                                                        Lama</label>
                                                                     <br>
                                                                     <img src="https://via.placeholder.com/350?text=No+Image+Avaiable"
-                                                                        alt="photo" class="img-thumbnail" alt="photo"
-                                                                        width="125" height="75"
+                                                                        alt="cover" class="img-thumbnail" alt="cover"
+                                                                        width="250" height="250"
                                                                         style="object-fit: cover">
                                                                 @else
-                                                                    <label for="photo" class="form-label">Gambar
-                                                                        Lama </label>
+                                                                    <label for="photo" class="form-label">Cover
+                                                                        Lama</label>
                                                                     <br>
-                                                                    <img src="{{ asset('storage/upload/profile/' . $kepaladina->photo) }}"
-                                                                        alt="Thumbnail" class="img-thumbnail" width="125"
-                                                                        height="75" style="object-fit: cover">
+                                                                    <img src="{{ asset('storage/majalah/' . $majalah->cover) }}"
+                                                                        alt="cover" class="img-thumbnail" width="250"
+                                                                        height="250" style="object-fit: cover">
                                                                 @endif
                                                             </div>
                                                         </div>
                                                         <div class="col-md-9">
                                                             <div class="form-group">
-                                                                <label for="photo" class="form-label">Pilih Foto
-                                                                    Terbaru<span class="text-danger">
-                                                                        &#42;</span> :</label>
+                                                                <label for="cover" class="form-label">Pilih Cover
+                                                                    Terbaru :</label>
                                                                 <input
-                                                                    class="form-control  @error('photo') is-invalid @enderror"
-                                                                    type="file" name="photo" />
-                                                                @error('photo')
+                                                                    class="form-control @error('cover') is-invalid @enderror"
+                                                                    type="file" name="cover" />
+                                                                @error('cover')
                                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                                 @enderror
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-md-12 col-12 mb-2">
-                                                            <label for="sambutan">Kata Sambutan Kepala Dinas<span
-                                                                    class="text-danger"> &#42;</span> :</label>
-                                                            <textarea class="form-control @error('sambutan') is-invalid @enderror" name="sambutan" id="summernote" cols="30"
-                                                                rows="10">{{ $kepaladina->sambutan }}</textarea>
-                                                            @error('sambutan')
+                                                        <div class="col-md-12 mb-2">
+                                                            <label for="name">Name : </label>
+                                                            <textarea class="form-control @error('name') is-invalid @enderror" rows="2" name="name">{{ $majalah->name }}</textarea>
+                                                            @error('name')
                                                                 <div class="invalid-feedback">{{ $message }}</div>
                                                             @enderror
                                                         </div>
@@ -95,14 +87,3 @@
             </section>
         </div>
     @endsection
-
-
-    @push('script')
-        <script src="{{ asset('template/admin') }}/vendors/summernote/summernote-lite.min.js"></script>
-        <script>
-            $('#summernote').summernote({
-                tabsize: 2,
-                height: 300,
-            })
-        </script>
-    @endpush

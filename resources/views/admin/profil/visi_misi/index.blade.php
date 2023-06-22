@@ -33,10 +33,10 @@
                                         <tbody>
                                             @forelse ($visimisis as $visimisi)
                                                 <tr>
-                                                    <td>{{ $visimisi->visi }}</td>
-                                                    <td>{{ $visimisi->misi }}</td>
+                                                    <td>{{ Str::limit($visimisi->visi, 150) }}</td>
+                                                    <td>{{ Str::limit($visimisi->misi, 150) }}</td>
                                                     <td>
-                                                        <a href="{{ route('visimisi.edit', $visimisi->id) }}"
+                                                        <a href="{{ route('admin.visimisi.edit', $visimisi->id) }}"
                                                             class="btn btn-sm btn-warning">Edit</a>
                                                     </td>
                                                 </tr>

@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin\Tupoksi;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateVisiMisiRequest extends FormRequest
+class StoreTupoksiRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,8 +22,7 @@ class UpdateVisiMisiRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'visi' => 'required|min:3',
-            'misi' => 'required|min:3',
+            //
         ];
     }
 }

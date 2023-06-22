@@ -29,22 +29,22 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="">Kepala Dinas</a>
+                            <a href="{{ route('admin.kepaladinas.index') }}">Sambutan Kepala Dinas</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="">Visi & Misi</a>
+                            <a href="{{ route('admin.visimisi.index') }}">Visi & Misi</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="">Tugas Pokok & Fungsi</a>
+                            <a href="{{ route('admin.tupoksi.index') }}">Tugas Pokok & Fungsi</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="/menu_struktur_organisasi">Struktur Organisasi</a>
+                            <a href="{{ route('admin.strukturorganisasi.index') }}">Struktur Organisasi</a>
                         </li>
                     </ul>
                 </li>
 
                 <li class="sidebar-item @yield('menuMajalah')">
-                    <a href="/menu_majalah" class='sidebar-link'>
+                    <a href="{{ route('admin.majalah.index') }}" class='sidebar-link'>
                         <i class="bi bi-file-earmark-richtext-fill"></i>
                         <span>E-Magazine</span>
                     </a>
@@ -53,12 +53,6 @@
                     <a href="{{ route('admin.services.index') }}" class='sidebar-link'>
                         <i class="bi bi-window" width="20"></i>
                         <span>Layanan</span>
-                    </a>
-                </li>
-                <li class="sidebar-item @yield('menuBerita')">
-                    <a href="/menu_berita" class='sidebar-link'>
-                        <i class="bi bi-newspaper" width="20"></i>
-                        <span>Berita</span>
                     </a>
                 </li>
 

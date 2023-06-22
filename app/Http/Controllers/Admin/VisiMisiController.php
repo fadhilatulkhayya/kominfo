@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreVisiMisiRequest;
-use App\Http\Requests\UpdateVisiMisiRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\VisiMisi\StoreVisiMisiRequest;
+use App\Http\Requests\Admin\VisiMisi\UpdateVisiMisiRequest;
 use App\Models\VisiMisi;
 
 class VisiMisiController extends Controller
@@ -57,7 +58,7 @@ class VisiMisiController extends Controller
         $attr = $request->validated();
 
         $visimisi->update($attr);
-        return redirect()->route('visimisi.index');
+        return redirect()->route('admin.visimisi.index');
     }
 
     /**

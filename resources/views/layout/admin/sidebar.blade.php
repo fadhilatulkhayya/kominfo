@@ -43,6 +43,21 @@
                     </ul>
                 </li>
 
+                <li class="sidebar-item has-sub {{ request()->is('admin/profile*') ? 'active open' : '' }}">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-person"></i>
+                        <span>Profil</span>
+                    </a>
+                    <ul class="submenu ">
+                        @foreach ($profiles as $data)
+                            <li
+                                class="submenu-item {{ request()->is('admin/profile/' . $data->slug . '') ? 'active' : '' }}">
+                                <a href="{{ route('admin.profile.show', $data->slug) }}">{{ $data->title }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </li>
+
                 <li class="sidebar-item @yield('menuMajalah')">
                     <a href="{{ route('admin.majalah.index') }}" class='sidebar-link'>
                         <i class="bi bi-file-earmark-richtext-fill"></i>

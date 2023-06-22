@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Service;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('dashboard.home');
+        $services = Service::latest()->get();
+        return view('dashboard.home', compact('services'));
     }
 
     public function majalah()
@@ -18,7 +20,8 @@ class HomeController extends Controller
 
     public function layanan()
     {
-        return view('dashboard.layanan');
+        $services = Service::latest()->get();
+        return view('dashboard.layanan', compact('services'));
     }
 
     public function kepalaDinas()
@@ -39,5 +42,10 @@ class HomeController extends Controller
     public function strukturOrganisasi()
     {
         return view('dashboard.profil.strukturorganisasi');
+    }
+
+    public function detailBerita()
+    {
+        return view('dashboard.detail_berita');
     }
 }

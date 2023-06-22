@@ -3,21 +3,51 @@
   @section('menuLayanan', 'active')
 
   @section('content')
+      <div id="portfolio" class="our-portfolio section">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-5">
+                      <div class="section-heading wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
+                          <h4>Layanan Kami</h4>
+                          <div class="line-dec"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="container-fluid wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="loop owl-carousel">
+                          @forelse ($services as $service)
+                              <div class="item">
+                                  <a href="{{ $service->url }}">
+                                      <div class="portfolio-item">
+                                          <div class="thumb">
+                                              <img src="{{ asset('storage/upload/layanan/' . $service->thumbnail) }}"
+                                                  alt="">
+                                          </div>
+                                          <div class="down-content">
+                                              <h4>{{ $service->name }}</h4>
+                                          </div>
+                                      </div>
+                                  </a>
+                              </div>
+                          @empty
+                              <h4>Maaf, belum ada data</h4>
+                          @endforelse
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
       <div id="services" class="services section">
           <div class="container">
               <div class="row">
-
                   <div class="col-lg-12">
                       <div class="naccs">
                           <div class="grid">
                               <div class="row">
-                                  <div class="col-lg-12 offset-lg-12  wow fadeInDown" data-wow-duration="1s"
-                                      data-wow-delay="0.3s">
-                                      <div class="section-heading">
-                                          <h4>Layanan</h4>
-                                          <div class="line-dec"></div>
-                                      </div>
-                                  </div>
                                   <div class="col-lg-12">
                                       <div class="menu">
                                           <div class="first-thumb active">

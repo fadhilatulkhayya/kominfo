@@ -41,8 +41,8 @@
                                                     <td><img src="{{ asset('storage/upload/majalah/' . $majalah->cover) }}"
                                                             class="img-thumbnail" width="200" height="150"
                                                             style="object-fit: cover" /></td>
-                                                    <td><a
-                                                            href="{{ url('storage/upload/majalah/' . $majalah->file) }}">{{ $majalah->name }}</a>
+                                                    <td><a href="{{ url('storage/upload/majalah/' . $majalah->file) }}"
+                                                            target="_blank">{{ $majalah->name }}</a>
                                                     </td>
                                                     <td>{{ $majalah->name }}</td>
                                                     <td>@include('admin.majalah.include.action')</td>

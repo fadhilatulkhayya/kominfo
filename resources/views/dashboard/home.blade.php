@@ -301,81 +301,30 @@
               <div class="row">
                   <div class="col-lg-12">
                       <div class="loop owl-carousel">
-                          <div class="item">
-                              <a href="#">
-                                  <div class="portfolio-item">
-                                      <div class="thumb">
-                                          <img src="{{ asset('template/dashboard') }}/images/portfolio-01.jpg"
-                                              alt="">
+
+                          @forelse ($services as $service)
+                              <div class="item">
+                                  <a href="{{ $service->url }}">
+                                      <div class="portfolio-item">
+                                          <div class="thumb">
+                                              <img src="{{ asset('storage/upload/layanan/' . $service->thumbnail) }}"
+                                                  alt="">
+                                          </div>
+                                          <div class="down-content">
+                                              <h4>{{ $service->name }}</h4>
+                                          </div>
                                       </div>
-                                      <div class="down-content">
-                                          <h4>Website Builder</h4>
-                                          <span>Marketing</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="item">
-                              <a href="#">
-                                  <div class="portfolio-item">
-                                      <div class="thumb">
-                                          <img src="{{ asset('template/dashboard') }}/images/portfolio-01.jpg"
-                                              alt="">
-                                      </div>
-                                      <div class="down-content">
-                                          <h4>Website Builder</h4>
-                                          <span>Marketing</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="item">
-                              <a href="#">
-                                  <div class="portfolio-item">
-                                      <div class="thumb">
-                                          <img src="{{ asset('template/dashboard') }}/images/portfolio-02.jpg"
-                                              alt="">
-                                      </div>
-                                      <div class="down-content">
-                                          <h4>Website Builder</h4>
-                                          <span>Marketing</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="item">
-                              <a href="#">
-                                  <div class="portfolio-item">
-                                      <div class="thumb">
-                                          <img src="{{ asset('template/dashboard') }}/images/portfolio-03.jpg"
-                                              alt="">
-                                      </div>
-                                      <div class="down-content">
-                                          <h4>Website Builder</h4>
-                                          <span>Marketing</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="item">
-                              <a href="#">
-                                  <div class="portfolio-item">
-                                      <div class="thumb">
-                                          <img src="{{ asset('template/dashboard') }}/images/portfolio-04.jpg"
-                                              alt="">
-                                      </div>
-                                      <div class="down-content">
-                                          <h4>Website Builder</h4>
-                                          <span>Marketing</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
+                                  </a>
+                              </div>
+                          @empty
+                              <h4>Maaf, belum ada data</h4>
+                          @endforelse
+
                       </div>
                   </div>
               </div>
           </div>
       </div>
 
-      
+
   @endsection

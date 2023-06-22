@@ -28,6 +28,7 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>Thumbnail</th>
                                                 <th>URL</th>
                                                 <th>Nama</th>
                                                 <th>Opsi</th>
@@ -37,7 +38,11 @@
                                             @forelse($services as $service)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $service->url }}</td>
+                                                    <td><img src="{{ asset('storage/upload/layanan/' . $service->thumbnail) }}"
+                                                            class="img-thumbnail" width="200" height="150"
+                                                            style="object-fit: cover" /></td></td>
+                                                    <td><a href="https://www.{{ $service->url }}"
+                                                            target="_blank">{{ $service->url }}</a></td>
                                                     <td>{{ $service->name }}</td>
                                                     <td>@include('admin.service.include.action')</td>
                                                 </tr>

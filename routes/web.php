@@ -21,6 +21,8 @@ Route::get('/menu-kepala-dinas', [App\Http\Controllers\HomeController::class, 'k
 Route::get('/menu-visi-misi', [App\Http\Controllers\HomeController::class, 'visiMisi'])->name('visiMisi');
 Route::get('/menu-tupoksi', [App\Http\Controllers\HomeController::class, 'tupoksi'])->name('tupoksi');
 Route::get('/menu-struktur-organisasi', [App\http\Controllers\HomeController::class, 'strukturOrganisasi'])->name('strukturOrganisasi');
+
+Route::get('/detail-berita', [App\Http\Controllers\HomeController::class, 'detailBerita'])->name('detailBerita');
 // Route Home End
 
 

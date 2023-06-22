@@ -1,6 +1,6 @@
 @extends('admin')
-@section('title', 'Diskominfo Bone Bolango - Struktur Organisasi')
-@section('menuProfil', 'active')
+@section('title', 'Diskominfo Bone Bolango - Layanan')
+@section('menuLayanan', 'active')
 
 @section('content')
     <div id="main">
@@ -11,7 +11,7 @@
         </header>
 
         <div class="page-heading">
-            <h3>Profil/Struktur Organisasi</h3>
+            <h3>Layanan</h3>
         </div>
         <div class="page-content">
             <section class="row">
@@ -20,29 +20,31 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
+                                    <a class="btn btn-sm btn-primary" href="{{ route('admin.services.create') }}">
+                                        Tambah Data</a>
                                 </div>
                                 <div class="card-body">
                                     <table class='table table-striped' id="table1">
                                         <thead>
                                             <tr>
-                                                <th>Gambar Struktur Ogranisasi</th>
-                                                <th>Caption Gambar</th>
+                                                <th>No</th>
+                                                <th>URL</th>
+                                                <th>Nama</th>
                                                 <th>Opsi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($strukturorganisasis as $strukturorganisasi)
+                                            @forelse($services as $service)
                                                 <tr>
-                                                    <td><img src="{{ asset('storage/profile/' . $strukturorganisasi->gambar) }}"
-                                                            class="img-thumbnail" width="200" height="150"
-                                                            style="object-fit: cover" /></td>
-                                                    <td>{{ Str::limit($strukturorganisasi->caption, 100) }}</td>
-                                                    <td>
-                                                        <a href="{{ route('admin.strukturorganisasi.edit', $strukturorganisasi->id) }}"
-                                                            class="btn btn-sm btn-warning">Edit</a>
-                                                    </td>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ $service->url }}</td>
+                                                    <td>{{ $service->name }}</td>
+                                                    <td>@include('admin.service.include.action')</td>
                                                 </tr>
                                             @empty
+                                                <tr>
+                                                    <td colspan="4" class="text-center">Maaf, belum ada data</td>
+                                                </tr>
                                             @endforelse
                                         </tbody>
                                     </table>

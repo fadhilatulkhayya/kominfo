@@ -21,7 +21,7 @@
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form" action="{{ route('visimisi.update', $visimisi->id) }}"
+                                        <form class="form" action="{{ route('admin.visimisi.update', $visimisi->id) }}"
                                             method="post">
                                             @method('PUT')
                                             @csrf

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreMajalahRequest;
-use App\Http\Requests\UpdateMajalahRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Majalah\StoreMajalahRequest;
+use App\Http\Requests\Admin\Majalah\UpdateMajalahRequest;
 use App\Models\Majalah;
 
 class MajalahController extends Controller

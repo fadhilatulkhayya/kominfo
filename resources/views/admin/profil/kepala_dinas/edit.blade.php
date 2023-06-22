@@ -25,7 +25,8 @@
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form" action="{{ route('kepaladinas.update', $kepaladina->id) }}"
+                                        <form class="form"
+                                            action="{{ route('admin.kepaladinas.update', $kepaladina->id) }}"
                                             enctype="multipart/form-data" method="post">
                                             @method('PUT')
                                             @csrf

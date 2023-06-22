@@ -22,7 +22,7 @@
                                 <div class="card-content">
                                     <div class="card-body">
                                         <form class="form"
-                                            action="{{ route('strukturorganisasi.update', $strukturorganisasi->id) }}"
+                                            action="{{ route('admin.strukturorganisasi.update', $strukturorganisasi->id) }}"
                                             enctype="multipart/form-data" method="post">
                                             @method('PUT')
                                             @csrf

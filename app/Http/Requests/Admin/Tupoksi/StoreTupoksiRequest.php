@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin\Tupoksi;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreMajalahRequest extends FormRequest
+class StoreTupoksiRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,10 +22,7 @@ class StoreMajalahRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'require|min:10',
-            'cover' => 'require|image|mimes:jpeg,png,jpg|max:2048',
-            'slug' => 'require|min:10',
-            'file' => 'require|mimes:pdf|max:2048'
+            //
         ];
     }
 }

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreTupoksiRequest;
-use App\Http\Requests\UpdateTupoksiRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Tupoksi\StoreTupoksiRequest;
+use App\Http\Requests\Admin\Tupoksi\UpdateTupoksiRequest;
 use App\Models\Tupoksi;
 
 class TupoksiController extends Controller
@@ -58,7 +59,7 @@ class TupoksiController extends Controller
         $attr = $request->validated();
 
         $tupoksi->update($attr);
-        return redirect()->route('tupoksi.index');
+        return redirect()->route('admin.tupoksi.index');
     }
 
     /**

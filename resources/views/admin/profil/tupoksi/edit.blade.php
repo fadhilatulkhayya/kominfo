@@ -25,17 +25,17 @@
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form" action="{{ route('tupoksi.update', $tupoksi->id) }}"
+                                        <form class="form" action="{{ route('admin.tupoksi.update', $tupoksi->id) }}"
                                             method="post">
                                             @method('PUT')
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-12 col-12 mb-2">
-                                                    <textarea class="form-control @error('isi_tupoksi') is-invalid @enderror" name="isi_tupoksi" id="summernote" cols="30"
-                                                        rows="10">{{ $tupoksi->isi_tupoksi }}</textarea>
-                                                        @error('isi_tupoksi')
-                                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                                @enderror
+                                                    <textarea class="form-control @error('isi_tupoksi') is-invalid @enderror" name="isi_tupoksi" id="summernote"
+                                                        cols="30" rows="10">{{ $tupoksi->isi_tupoksi }}</textarea>
+                                                    @error('isi_tupoksi')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                                 <div class="col-12 d-flex justify-content-end">
                                                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin\Tupoksi;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateStrukturOrganisasiRequest extends FormRequest
+class UpdateTupoksiRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,7 @@ class UpdateStrukturOrganisasiRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'caption' => 'required|min:3',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:2048'
+            'isi_tupoksi' => 'required|min:3',
         ];
     }
 }

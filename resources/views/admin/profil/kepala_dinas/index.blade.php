@@ -38,7 +38,7 @@
                                                             style="object-fit: cover" /></td>
                                                     <td>{!! substr(strip_tags($kepaladina->sambutan), 0, 418) !!}</td>
                                                     <td>
-                                                        <a href="{{ route('kepaladinas.edit', $kepaladina->id) }}"
+                                                        <a href="{{ route('admin.kepaladinas.edit', $kepaladina->id) }}"
                                                             class="btn btn-sm btn-warning">Edit</a>
                                                     </td>
                                                 </tr>

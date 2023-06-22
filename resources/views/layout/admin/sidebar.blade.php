@@ -16,7 +16,7 @@
                 <li class="sidebar-title">Menu</li>
 
                 <li class="sidebar-item @yield('menuDashboard')">
-                    <a href="/beranda_admin" class='sidebar-link'>
+                    <a href="{{ route('admin.dashboard') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
@@ -29,28 +29,28 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="{{ route('kepaladinas.index') }}">Sambutan Kepala Dinas</a>
+                            <a href="{{ route('admin.kepaladinas.index') }}">Sambutan Kepala Dinas</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="{{ route('visimisi.index') }}">Visi & Misi</a>
+                            <a href="{{ route('admin.visimisi.index') }}">Visi & Misi</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="{{ route('tupoksi.index') }}">Tugas Pokok & Fungsi</a>
+                            <a href="{{ route('admin.tupoksi.index') }}">Tugas Pokok & Fungsi</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="{{ route('strukturorganisasi.index') }}">Struktur Organisasi</a>
+                            <a href="{{ route('admin.strukturorganisasi.index') }}">Struktur Organisasi</a>
                         </li>
                     </ul>
                 </li>
 
                 <li class="sidebar-item @yield('menuMajalah')">
-                    <a href="{{ route('majalah.index') }}" class='sidebar-link'>
+                    <a href="{{ route('admin.majalah.index') }}" class='sidebar-link'>
                         <i class="bi bi-file-earmark-richtext-fill"></i>
                         <span>E-Magazine</span>
                     </a>
                 </li>
                 <li class="sidebar-item @yield('menuLayanan')">
-                    <a href="" class='sidebar-link'>
+                    <a href="{{ route('admin.services.index') }}" class='sidebar-link'>
                         <i class="bi bi-window" width="20"></i>
                         <span>Layanan</span>
                     </a>

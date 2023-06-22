@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreStrukturOrganisasiRequest;
-use App\Http\Requests\UpdateStrukturOrganisasiRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\StrukturOrganisasi\StoreStrukturOrganisasiRequest;
+use App\Http\Requests\Admin\StrukturOrganisasi\UpdateStrukturOrganisasiRequest;
 use App\Models\StrukturOrganisasi;
 use Intervention\Image\Facades\Image;
 
@@ -81,7 +82,7 @@ class StrukturOrganisasiController extends Controller
 
         $strukturorganisasi->update($attr);
 
-        return redirect()->route('strukturorganisasi.index');
+        return redirect()->route('admin.strukturorganisasi.index');
     }
 
     /**

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreKepalaDinasRequest;
-use App\Http\Requests\UpdateKepalaDinasRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\KepalaDinas\StoreKepalaDinasRequest;
+use App\Http\Requests\Admin\KepalaDinas\UpdateKepalaDinasRequest;
 use App\Models\KepalaDinas;
 use Intervention\Image\Facades\Image;
 
@@ -81,7 +82,7 @@ class KepalaDinasController extends Controller
 
         $kepaladina->update($attr);
 
-        return redirect()->route('kepaladinas.index');
+        return redirect()->route('admin.kepaladinas.index');
     }
 
     /**

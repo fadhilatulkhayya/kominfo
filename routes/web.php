@@ -1,10 +1,5 @@
 <?php
 
-use App\Http\Controllers\KepalaDinasController;
-use App\Http\Controllers\MajalahController;
-use App\Http\Controllers\StrukturOrganisasiController;
-use App\Http\Controllers\TupoksiController;
-use App\Http\Controllers\VisiMisiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,18 +42,27 @@ Route::get('/menu-struktur-organisasi', function () {
 
 
 //Route Admin
-Route::get('/beranda_admin', function () {
-    return view('admin.index');
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+
+    // Dashboard
+    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+
+    // Service
+    Route::resource('/services', App\Http\Controllers\Admin\ServiceController::class);
+
+    // Kepala Dinas
+    Route::resource('/kepaladinas', App\Http\Controllers\Admin\KepalaDinasController::class);
+
+    // Majalah
+    Route::resource('/majalah', App\Http\Controllers\Admin\MajalahController::class);
+
+    // Struktur Organisasi
+    Route::resource('/strukturorganisasi', App\Http\Controllers\Admin\StrukturOrganisasiController::class);
+
+    // Tupoksi
+    Route::resource('/tupoksi', App\Http\Controllers\Admin\TupoksiController::class);
+
+    // Visi Misi
+    Route::resource('/visimisi', App\Http\Controllers\Admin\VisiMisiController::class);
 });
-
-Route::resource('strukturorganisasi', StrukturOrganisasiController::class);
-
-Route::resource('kepaladinas', KepalaDinasController::class);
-
-Route::resource('visimisi', VisiMisiController::class);
-
-Route::resource('tupoksi', TupoksiController::class);
-
-Route::resource('majalah', MajalahController::class);
-
-// Route::resource('layanan', LayananC::class);

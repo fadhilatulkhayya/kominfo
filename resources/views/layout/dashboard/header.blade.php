@@ -53,7 +53,7 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="" class="logo">
+                        <a href="/" class="logo">
                             <img src="{{ asset('template/dashboard') }}/images/logo-diskominfo1.png" alt="">
                         </a>
                         <!-- ***** Logo End ***** -->

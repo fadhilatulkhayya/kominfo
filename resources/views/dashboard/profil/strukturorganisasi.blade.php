@@ -17,8 +17,10 @@
                           <div class="row">
                               <div class="col-lg-12">
                                   @forelse ($strukturOrganisasis as $strukturOrganisasi)
-                                      <img src="{{ asset('storage/upload/profile/' . $strukturOrganisasi->gambar) }}"
-                                          width="20%" alt="kepala_dinas" />
+                                      <div class="text-center">
+                                          <img src="{{ asset('storage/upload/profile/' . $strukturOrganisasi->gambar) }}"
+                                              style="width:60%" alt="struktur_organisasi" />
+                                      </div>
                                   @empty
                                       Maaf, data belum ada
                                   @endforelse

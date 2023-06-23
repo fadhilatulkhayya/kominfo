@@ -17,6 +17,13 @@
                       <div class="blog-posts">
                           <div class="row">
                               <div class="col-lg-12">
+                                  @forelse ($kepaladinas as $kepaladina)
+                                      <img src="{{ asset('storage/upload/profile/' . $kepaladina->photo) }}" width="25%"
+                                          alt="kepala_dinas" />
+                                      {!! $kepaladina->sambutan !!}
+                                  @empty
+                                  Maaf, data belum ada
+                                  @endforelse
                               </div>
                           </div>
                       </div>

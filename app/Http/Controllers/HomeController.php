@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Models\KepalaDinas;
+use App\Models\VisiMisi;
+use App\Models\Tupoksi;
+use App\Models\Majalah;
+use App\Models\StrukturOrganisasi;
 
 class HomeController extends Controller
 {
@@ -26,22 +31,27 @@ class HomeController extends Controller
 
     public function kepalaDinas()
     {
-        return view('dashboard.profil.kepaladinas');
+        $kepaladinas = KepalaDinas::where('id', 1)->get();
+
+        return view('dashboard.profil.kepaladinas', compact('kepaladinas'));
     }
 
     public function visiMisi()
     {
-        return view('dashboard.profil.visimisi');
+        $visimisis = VisiMisi::where('id', 1)->get();
+        return view('dashboard.profil.visimisi', compact('visimisis'));
     }
 
     public function tupoksi()
     {
-        return view('dashboard.profil.tupoksi');
+        $tupoksis = Tupoksi::where('id', 1)->get();
+        return view('dashboard.profil.tupoksi', compact('tupoksis'));
     }
 
     public function strukturOrganisasi()
     {
-        return view('dashboard.profil.strukturorganisasi');
+        $strukturOrganisasis = StrukturOrganisasi::where('id', 1)->get();
+        return view('dashboard.profil.strukturorganisasi', compact('strukturOrganisasis'));
     }
 
     public function detailBerita()

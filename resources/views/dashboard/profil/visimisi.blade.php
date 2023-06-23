@@ -16,6 +16,18 @@
                       <div class="blog-posts">
                           <div class="row">
                               <div class="col-lg-12">
+                                  @forelse ($visimisis as $visimisi)
+                                      <div class="mb-5 text-center">
+                                          <h4>Visi</h4>
+                                          {{ $visimisi->visi }}
+                                      </div>
+                                      <div class=" text-center">
+                                          <h4>Misi</h4>
+                                          {{ $visimisi->misi }}
+                                      </div>
+                                  @empty
+                                      Maaf, data belum ada
+                                  @endforelse
                               </div>
                           </div>
                       </div>

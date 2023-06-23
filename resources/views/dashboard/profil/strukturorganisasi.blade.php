@@ -16,6 +16,12 @@
                       <div class="blog-posts">
                           <div class="row">
                               <div class="col-lg-12">
+                                  @forelse ($strukturOrganisasis as $strukturOrganisasi)
+                                      <img src="{{ asset('storage/upload/profile/' . $strukturOrganisasi->gambar) }}"
+                                          width="20%" alt="kepala_dinas" />
+                                  @empty
+                                      Maaf, data belum ada
+                                  @endforelse
                               </div>
                           </div>
                       </div>

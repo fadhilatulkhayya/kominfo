@@ -20,7 +20,7 @@
                       <div class="loop owl-carousel">
                           @forelse ($services as $service)
                               <div class="item">
-                                  <a href="{{ $service->url }}">
+                                  <a href="https://{{ $service->url }}">
                                       <div class="portfolio-item">
                                           <div class="thumb">
                                               <img src="{{ asset('storage/upload/layanan/' . $service->thumbnail) }}"

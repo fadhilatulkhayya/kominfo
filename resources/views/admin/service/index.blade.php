@@ -40,8 +40,9 @@
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td><img src="{{ asset('storage/upload/layanan/' . $service->thumbnail) }}"
                                                             class="img-thumbnail" width="200" height="150"
-                                                            style="object-fit: cover" /></td></td>
-                                                    <td><a href="https://www.{{ $service->url }}"
+                                                            style="object-fit: cover" /></td>
+                                                    </td>
+                                                    <td><a href="https://{{ $service->url }}"
                                                             target="_blank">{{ $service->url }}</a></td>
                                                     <td>{{ $service->name }}</td>
                                                     <td>@include('admin.service.include.action')</td>

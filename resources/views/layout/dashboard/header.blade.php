@@ -61,7 +61,7 @@
                         <ul class="nav">
                             <li><a href="{{ route('home') }}" class="@yield('menuBeranda')">Beranda</a></li>
                             <li class="submenu">
-                                <a href="#" class="@yield('menuProfil')">Profil</a>
+                                <a href="#profil" class="@yield('menuProfil')">Profil</a>
                                 <ul>
                                     <li><a href="{{ route('kepalaDinas') }}">Kepala Dinas</a></li>
                                     <li><a href="{{ route('visiMisi') }}">Visi & Misi</a></li>

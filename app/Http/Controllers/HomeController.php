@@ -9,13 +9,17 @@ use App\Models\VisiMisi;
 use App\Models\Tupoksi;
 use App\Models\Majalah;
 use App\Models\StrukturOrganisasi;
+use GuzzleHttp\Client;
 
 class HomeController extends Controller
 {
     public function index()
     {
         $services = Service::latest()->get();
-        return view('dashboard.home', compact('services'));
+
+        $articles = $this->apiAllArticle();
+
+        return view('dashboard.home', compact('services', 'articles'));
     }
 
     public function majalah()
@@ -55,8 +59,40 @@ class HomeController extends Controller
         return view('dashboard.profil.strukturorganisasi', compact('strukturOrganisasis'));
     }
 
-    public function detailBerita()
+    public function detailBerita($slug)
     {
-        return view('dashboard.detail_berita');
+        $articles = $this->apiAllArticle();
+        $article = $this->apiDetailArticle($slug);
+
+        return view('dashboard.detail_berita', compact('article', 'articles'));
+    }
+
+    private function apiAllArticle()
+    {
+        $client = new Client();
+        $url = "https://berita.bonebolangokab.go.id/api/article";
+
+
+        $response = $client->request('GET', $url, [
+            'verify'  => false,
+        ]);
+
+        $responseBody = json_decode($response->getBody(), true);
+
+        return $responseBody;
+    }
+
+    private function apiDetailArticle($slug)
+    {
+        $client = new Client();
+        $url = "https://berita.bonebolangokab.go.id/api/article/$slug";
+
+        $response = $client->request('GET', $url, [
+            'verify'  => false,
+        ]);
+
+        $responseBody = json_decode($response->getBody(), true);
+
+        return $responseBody;
     }
 }

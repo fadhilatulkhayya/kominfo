@@ -26,7 +26,7 @@
                                                           target="_blank" class=""><img
                                                               src="{{ asset('storage/upload/majalah/' . $majalah->cover) }}"
                                                               class="img-thumbnail" width="200" height="200"
-                                                              style="object-fit: cover; width:40%" /></a>
+                                                              style="object-fit: cover" /></a>
                                                   </div>
                                               </div>
                                           @empty

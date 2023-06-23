@@ -22,7 +22,7 @@ Route::get('/menu-visi-misi', [App\Http\Controllers\HomeController::class, 'visi
 Route::get('/menu-tupoksi', [App\Http\Controllers\HomeController::class, 'tupoksi'])->name('tupoksi');
 Route::get('/menu-struktur-organisasi', [App\http\Controllers\HomeController::class, 'strukturOrganisasi'])->name('strukturOrganisasi');
 
-Route::get('/detail-berita', [App\Http\Controllers\HomeController::class, 'detailBerita'])->name('detailBerita');
+Route::get('/detail-berita/{slug}', [App\Http\Controllers\HomeController::class, 'detailBerita'])->name('detailBerita');
 // Route Home End
 
 

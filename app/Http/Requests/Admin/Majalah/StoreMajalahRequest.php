@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin\Majalah;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
 
 class StoreMajalahRequest extends FormRequest
 {
@@ -12,6 +13,13 @@ class StoreMajalahRequest extends FormRequest
     public function authorize(): bool
     {
         return true;
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'slug' => Str::slug($this->input('name')),
+        ]);
     }
 
     /**

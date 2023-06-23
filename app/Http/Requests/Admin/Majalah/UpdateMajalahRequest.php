@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin\Majalah;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
 
 class UpdateMajalahRequest extends FormRequest
 {
@@ -14,6 +15,13 @@ class UpdateMajalahRequest extends FormRequest
         return true;
     }
 
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'slug' => Str::slug($this->input('name')),
+        ]);
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -23,9 +31,9 @@ class UpdateMajalahRequest extends FormRequest
     {
         return [
             'name' => 'required|min:10',
-            'cover' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'cover' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'slug' => 'required|min:10',
-            'file' => 'required|mimes:pdf|max:20000'
+            'file' => 'nullable|mimes:pdf|max:20000'
         ];
     }
 }

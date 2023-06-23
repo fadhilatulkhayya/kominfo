@@ -28,7 +28,7 @@
                                     &#42;</span> :</label>
                             <input class="form-control  @error('file') is-invalid @enderror" type="file"
                                 name="file" />
-                            @error('e-magazine')
+                            @error('file')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
@@ -56,7 +56,7 @@
                                 style="object-fit: cover">
                         @else
                             <label for="cover" class="form-label">Cover Lama</label>
-                            <img src="{{ asset('storage/upload/majalah/' . $majalah->cover) }}" alt="cover"
+                            <img src="{{ asset('storage/upload/majalah/cover/' . $majalah->cover) }}" alt="cover"
                                 class="rounded mb-2 mt-2" width="200" height="150" style="object-fit: cover">
                         @endif
                     </div>

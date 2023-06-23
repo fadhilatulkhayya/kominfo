@@ -36,7 +36,7 @@ class MajalahController extends Controller
         $attr = $request->validated();
 
         if ($request->hasFile('cover') && $request->file('cover')->isValid()) {
-            $path = storage_path('app/public/upload/majalah/');
+            $path = storage_path('app/public/upload/majalah/cover/');
             $filename = $request->file('cover')->hashName();
 
             if (!file_exists($path)) {
@@ -54,12 +54,10 @@ class MajalahController extends Controller
         if ($request->file('file') && $request->file('file')->isValid()) {
 
             $filename = $request->file('file')->hashName();
-            $request->file('file')->storeAs('app/public/upload/majalah/', $filename);
+            $request->file('file')->storeAs('upload/majalah/', $filename, 'public');
 
             $attr['file'] = $filename;
         }
-
-        $attr['slug'] = Str::slug($request->name, '-');
 
         Majalah::create($attr);
         return redirect()->route('admin.majalah.index')->with('success', 'Data Berhasil Ditambahkan');
@@ -89,7 +87,7 @@ class MajalahController extends Controller
         $attr = $request->validated();
 
         if ($request->hasFile('cover') && $request->file('cover')->isValid()) {
-            $path = storage_path('app/public/upload/majalah/');
+            $path = storage_path('app/public/upload/majalah/cover/');
             $filename = $request->file('cover')->hashName();
 
             if (!file_exists($path)) {
@@ -128,10 +126,8 @@ class MajalahController extends Controller
             $attr['file'] = $filename;
         }
 
-        $attr['slug'] = Str::slug($request->name, '-');
-
         $majalah->update($attr);
-        return redirect()->route('admin.services.index')->with('success', 'Data Berhasil Diubah');
+        return redirect()->route('admin.majalah.index')->with('success', 'Data Berhasil Diubah');
     }
 
     /**
@@ -139,6 +135,27 @@ class MajalahController extends Controller
      */
     public function destroy(Majalah $majalah)
     {
-        //
+        try {
+            // determine path file
+            $pathFile = storage_path('app/public/upload/majalah/');
+            $pathCover = storage_path('app/public/upload/majalah/cover/');
+
+            // if magazine file exist remove file from directory
+            if ($majalah->file != null && file_exists($pathFile . $majalah->file)) {
+                unlink($pathFile . $majalah->file);
+            }
+
+            // if magazine cover exist remove file from directory
+            if ($majalah->cover != null && file_exists($pathCover . $majalah->cover)) {
+                unlink($pathCover . $majalah->cover);
+            }
+
+            $majalah->delete();
+            return redirect()->route('admin.majalah.index')->with('success', 'Data Berhasil Dihapus');
+        } catch (\Throwable $th) {
+            return redirect()
+                ->route('admin.majalah.index')
+                ->with('error', __($th->getMessage()));
+        }
     }
 }

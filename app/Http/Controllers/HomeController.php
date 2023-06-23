@@ -20,7 +20,8 @@ class HomeController extends Controller
 
     public function majalah()
     {
-        return view('dashboard.majalah');
+        $majalahs = Majalah::latest()->get();
+        return view('dashboard.majalah', compact('majalahs'));
     }
 
     public function layanan()

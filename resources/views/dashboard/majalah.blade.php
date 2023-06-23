@@ -18,143 +18,45 @@
                                       </div>
                                   </div>
                                   <div class="col-lg-12">
-                                      <div class="menu">
-                                          <div class="first-thumb active">
-                                              <div class="thumb">
-                                                  <span class="icon"><img
-                                                          src="{{ asset('template/dashboard') }}/images/service-icon-01.png"
-                                                          alt=""></span>
-                                                  Web Development
+                                      <div class="row">
+                                          @forelse ($majalahs as $majalah)
+                                              <div class="col-lg-6">
+                                                  <div class="position-relative mb-3">
+                                                      <a href="{{ url('storage/upload/majalah/' . $majalah->file) }}"
+                                                          target="_blank" class=""><img
+                                                              src="{{ asset('storage/upload/majalah/' . $majalah->cover) }}"
+                                                              class="img-thumbnail" width="200" height="200"
+                                                              style="object-fit: cover; width:40%" /></a>
+                                                  </div>
                                               </div>
-                                          </div>
-                                          <div>
-                                              <div class="thumb">
-                                                  <span class="icon"><img
-                                                          src="{{ asset('template/dashboard') }}/images/service-icon-02.png"
-                                                          alt=""></span>
-                                                  Network & CCTV
-                                              </div>
-                                          </div>
-                                          <div>
-                                              <div class="thumb">
-                                                  <span class="icon"><img
-                                                          src="{{ asset('template/dashboard') }}/images/service-icon-03.png"
-                                                          alt=""></span>
-                                                  Informasi Publik
-                                              </div>
-                                          </div>
+                                          @empty
+                                              <h4>Maaf, belum ada data</h4>
+                                          @endforelse
                                       </div>
                                   </div>
-                                  <div class="col-lg-12">
-                                      <ul class="nacc">
-                                          <li class="active">
-                                              <div>
-                                                  <div class="thumb">
-                                                      <div class="row">
-                                                          <div class="col-lg-6 align-self-center">
-                                                              <div class="left-text">
-                                                                  <h4>Web Development</h4>
-                                                                  <p>Web development adalah proses membuat dan memelihara
-                                                                      situs web. Hal ini melibatkan penggunaan bahasa
-                                                                      pemrograman dan teknologi web untuk membuat halaman
-                                                                      web yang dapat diakses melalui internet.</p>
-                                                                  <div class="ticks-list"><span><i class="fa fa-check"></i>
-                                                                          Perencanaan</span>
-                                                                      <span><i class="fa fa-check"></i>
-                                                                          Desain</span> <span><i class="fa fa-check"></i>
-                                                                          Pengembangan</span>
-                                                                      <span><i class="fa fa-check"></i> Uji Coba dan
-                                                                          Debugging</span>
-                                                                      <span><i class="fa fa-check"></i> Peluncuran</span>
-                                                                      <span><i class="fa fa-check"></i> Pemeliharaan</span>
-                                                                  </div>
-
-                                                              </div>
-                                                          </div>
-                                                          <div class="col-lg-6 align-self-center">
-                                                              <div class="right-image">
-                                                                  <img src="{{ asset('template/dashboard') }}/images/services-image.jpg"
-                                                                      alt="">
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </li>
-                                          <li>
-                                              <div>
-                                                  <div class="thumb">
-                                                      <div class="row">
-                                                          <div class="col-lg-6 align-self-center">
-                                                              <div class="left-text">
-                                                                  <h4>NETWORK & CCTV ENGINEER</h4>
-                                                                  <p>CCTV (Closed Circuit Television) dan Networking
-                                                                      Engineering adalah dua teknologi yang berkaitan erat
-                                                                      dengan keamanan dan pemantauan, yang memiliki peran
-                                                                      penting di era digital saat ini. CCTV digunakan untuk
-                                                                      merekam gambar dan suara di suatu tempat atau lokasi
-                                                                      tertentu, sedangkan Networking Engineering bertanggung
-                                                                      jawab untuk mengelola jaringan komputer dan sistem
-                                                                      informasi.</p>
-                                                                  <div class="ticks-list"><span><i class="fa fa-check"></i>
-                                                                          Pemasangan</span>
-                                                                      <span><i class="fa fa-check"></i>
-                                                                          Pemantauan</span> <span><i
-                                                                              class="fa fa-check"></i> Pemeliharaan</span>
-                                                                      <span><i class="fa fa-check"></i> Wifi Publik</span>
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                          <div class="col-lg-6 align-self-center">
-                                                              <div class="right-image">
-                                                                  <img src="{{ asset('template/dashboard') }}/images/services-image-02.jpg"
-                                                                      alt="">
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </li>
-                                          <li>
-                                              <div>
-                                                  <div class="thumb">
-                                                      <div class="row">
-                                                          <div class="col-lg-6 align-self-center">
-                                                              <div class="left-text">
-                                                                  <h4>Informasi Publik</h4>
-                                                                  <p>Informasi publik adalah informasi yang dapat diakses
-                                                                      dan digunakan oleh masyarakat secara umum. Informasi
-                                                                      publik ini biasanya disediakan oleh pemerintah,
-                                                                      lembaga publik, dan organisasi lainnya yang
-                                                                      berhubungan dengan kepentingan umum. Dalam banyak
-                                                                      negara, hak akses terhadap informasi publik dijamin
-                                                                      oleh undang-undang, sehingga memungkinkan masyarakat
-                                                                      untuk memperoleh informasi yang diperlukan</p>
-                                                                  <div class="ticks-list"><span><i class="fa fa-check"></i>
-                                                                          Berita Daerah</span>
-                                                                      <span><i class="fa fa-check"></i> Berita
-                                                                          Pemerintahan</span><span><i
-                                                                              class="fa fa-check"></i>
-                                                                          Data Statistik</span> <span><i
-                                                                              class="fa fa-check"></i> Laporan
-                                                                          Keuangan</span>
-                                                                      <span><i class="fa fa-check"></i> Kebijakan
-                                                                          Publik</span>
-
-                                                                  </div>
-                                                              </div>
-                                                          </div>
-                                                          <div class="col-lg-6 align-self-center">
-                                                              <div class="right-image">
-                                                                  <img src="{{ asset('template/dashboard') }}/images/services-image-03.jpg"
-                                                                      alt="">
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </li>
-                                      </ul>
+                                  <div class="row">
+                                      <div class="col-12">
+                                          <nav aria-label="Page navigation">
+                                              <ul class="pagination justify-content-center">
+                                                  <li class="page-item disabled">
+                                                      <a class="page-link" href="#" aria-label="Previous">
+                                                          <span class="fa fa-angle-double-left" aria-hidden="true"></span>
+                                                          <span class="sr-only">Previous</span>
+                                                      </a>
+                                                  </li>
+                                                  <li class="page-item active"><a class="page-link" href="#">1</a>
+                                                  </li>
+                                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                  <li class="page-item">
+                                                      <a class="page-link" href="#" aria-label="Next">
+                                                          <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                                                          <span class="sr-only">Next</span>
+                                                      </a>
+                                                  </li>
+                                              </ul>
+                                          </nav>
+                                      </div>
                                   </div>
                               </div>
                           </div>

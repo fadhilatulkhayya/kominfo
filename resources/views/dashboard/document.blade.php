@@ -36,7 +36,7 @@
                                                               <td><a class="btn btn-primary"
                                                                       href="{{ url('storage/upload/document/' . $document->file) }}"
                                                                       role="button" download><i class="fa fa-download"></i>
-                                                                      Download</a>
+                                                                      Downloads</a>
                                                               </td>
                                                           </tr>
                                                       @empty

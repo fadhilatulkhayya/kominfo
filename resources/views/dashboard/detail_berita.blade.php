@@ -58,12 +58,12 @@
                                       <div class="w-100 d-flex flex-column justify-content-center bg-light px-3"
                                           style="height: 100px;">
                                           <div class="mb-1" style="font-size: 13px;">
-                                              <a href="">{{ $articles['data'][0]['category'] }}</a>
+                                              <a href="#">{{ $articles['data'][0]['category'] }}</a>
                                               <span class="px-1">/</span>
                                               <span>{{ $articles['data'][0]['published_at'] }}</span>
                                           </div>
                                           <a class="h6 m-0"
-                                              href="">{{ Str::limit($articles['data'][0]['title'], 55, '....') }}</a>
+                                              href="{{ route('detailBerita', $articles['data'][0]['slug']) }}">{{ Str::limit($articles['data'][0]['title'], 55, '....') }}</a>
                                       </div>
                                   </div>
                                   <div class="d-flex mb-3">
@@ -74,12 +74,12 @@
                                       <div class="w-100 d-flex flex-column justify-content-center bg-light px-3"
                                           style="height: 100px;">
                                           <div class="mb-1" style="font-size: 13px;">
-                                              <a href="">{{ $articles['data'][1]['category'] }}</a>
+                                              <a href="#">{{ $articles['data'][1]['category'] }}</a>
                                               <span class="px-1">/</span>
                                               <span>{{ $articles['data'][1]['published_at'] }}</span>
                                           </div>
                                           <a class="h6 m-0"
-                                              href="">{{ Str::limit($articles['data'][1]['title'], 55, '....') }}</a>
+                                              href="{{ route('detailBerita', $articles['data'][1]['slug']) }}">{{ Str::limit($articles['data'][1]['title'], 55, '....') }}</a>
                                       </div>
                                   </div>
                                   <div class="d-flex mb-3">
@@ -90,12 +90,12 @@
                                       <div class="w-100 d-flex flex-column justify-content-center bg-light px-3"
                                           style="height: 100px;">
                                           <div class="mb-1" style="font-size: 13px;">
-                                              <a href="">{{ $articles['data'][2]['category'] }}</a>
+                                              <a href="#">{{ $articles['data'][2]['category'] }}</a>
                                               <span class="px-1">/</span>
                                               <span>{{ $articles['data'][2]['published_at'] }}</span>
                                           </div>
                                           <a class="h6 m-0"
-                                              href="">{{ Str::limit($articles['data'][2]['title'], 55, '....') }}</a>
+                                              href="{{ route('detailBerita', $articles['data'][2]['slug']) }}">{{ Str::limit($articles['data'][2]['title'], 55, '....') }}</a>
                                       </div>
                                   </div>
                                   <div class="d-flex mb-3">
@@ -106,12 +106,12 @@
                                       <div class="w-100 d-flex flex-column justify-content-center bg-light px-3"
                                           style="height: 100px;">
                                           <div class="mb-1" style="font-size: 13px;">
-                                              <a href="">{{ $articles['data'][3]['category'] }}</a>
+                                              <a href="#">{{ $articles['data'][3]['category'] }}</a>
                                               <span class="px-1">/</span>
                                               <span>{{ $articles['data'][3]['published_at'] }}</span>
                                           </div>
                                           <a class="h6 m-0"
-                                              href="">{{ Str::limit($articles['data'][3]['title'], 55, '....') }}</a>
+                                              href="{{ route('detailBerita', $articles['data'][3]['slug']) }}">{{ Str::limit($articles['data'][3]['title'], 55, '....') }}</a>
                                       </div>
                                   </div>
                                   <div class="d-flex mb-3">
@@ -122,12 +122,12 @@
                                       <div class="w-100 d-flex flex-column justify-content-center bg-light px-3"
                                           style="height: 100px;">
                                           <div class="mb-1" style="font-size: 13px;">
-                                              <a href="">{{ $articles['data'][4]['category'] }}</a>
+                                              <a href="#">{{ $articles['data'][4]['category'] }}</a>
                                               <span class="px-1">/</span>
                                               <span>{{ $articles['data'][4]['published_at'] }}</span>
                                           </div>
                                           <a class="h6 m-0"
-                                              href="">{{ Str::limit($articles['data'][4]['title'], 55, '....') }}</a>
+                                              href="{{ route('detailBerita', $articles['data'][4]['slug']) }}">{{ Str::limit($articles['data'][4]['title'], 55, '....') }}</a>
                                       </div>
                                   </div>
                               </div>
@@ -140,10 +140,14 @@
                                   <div class="d-flex flex-wrap m-n1">
                                       <a href="#"
                                           class="btn btn-sm btn-outline-secondary m-1">{{ $articles['data'][0]['tag'][0] }}</a>
-                                      <a href="#" class="btn btn-sm btn-outline-secondary m-1">{{ $articles['data'][1]['tag'][0] }}</a>
-                                      <a href="#" class="btn btn-sm btn-outline-secondary m-1">{{ $articles['data'][2]['tag'][0] }}</a>
-                                      <a href="#" class="btn btn-sm btn-outline-secondary m-1">{{ $articles['data'][3]['tag'][0] }}</a>
-                                      <a href="#" class="btn btn-sm btn-outline-secondary m-1">{{ $articles['data'][4]['tag'][0] }}</a>
+                                      <a href="#"
+                                          class="btn btn-sm btn-outline-secondary m-1">{{ $articles['data'][1]['tag'][0] }}</a>
+                                      <a href="#"
+                                          class="btn btn-sm btn-outline-secondary m-1">{{ $articles['data'][2]['tag'][0] }}</a>
+                                      <a href="#"
+                                          class="btn btn-sm btn-outline-secondary m-1">{{ $articles['data'][3]['tag'][0] }}</a>
+                                      <a href="#"
+                                          class="btn btn-sm btn-outline-secondary m-1">{{ $articles['data'][4]['tag'][0] }}</a>
                                   </div>
                               </div>
                           </div>

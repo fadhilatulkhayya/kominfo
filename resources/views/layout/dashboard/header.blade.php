@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <link href="{{ url('https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css') }}" rel="stylesheet" />
 
     <title>Diskominfo Bone Bolango - @yield('title')</title>
 

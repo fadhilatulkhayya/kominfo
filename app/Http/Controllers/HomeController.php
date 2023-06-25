@@ -7,7 +7,7 @@ use App\Models\Service;
 use App\Models\KepalaDinas;
 use App\Models\VisiMisi;
 use App\Models\Tupoksi;
-use App\Models\Majalah;
+use App\Models\Document;
 use App\Models\StrukturOrganisasi;
 use GuzzleHttp\Client;
 
@@ -29,7 +29,8 @@ class HomeController extends Controller
 
     public function document()
     {
-        return view('dashboard.document');
+        $documents = Document::latest()->get();
+        return view('dashboard.document', compact('documents'));
     }
 
     public function layanan()

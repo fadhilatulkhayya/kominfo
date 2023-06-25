@@ -67,9 +67,9 @@ class HomeController extends Controller
     public function detailBerita($slug)
     {
         $articles = $this->apiAllArticle();
-        $article = $this->apiDetailArticle($slug);
+        $detailArticles = $this->apiDetailArticle($slug);
 
-        return view('dashboard.detail_berita', compact('article', 'articles'));
+        return view('dashboard.detail_berita', compact('detailArticles', 'articles'));
     }
 
     private function apiAllArticle()

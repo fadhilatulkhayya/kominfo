@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,19 +24,15 @@ Route::get('/menu-tupoksi', [App\Http\Controllers\HomeController::class, 'tupoks
 Route::get('/menu-struktur-organisasi', [App\http\Controllers\HomeController::class, 'strukturOrganisasi'])->name('strukturOrganisasi');
 
 Route::get('/detail-berita/{slug}', [App\Http\Controllers\HomeController::class, 'detailBerita'])->name('detailBerita');
-
-Route::get("/page-not-found", function () {
-    return View::make('404');
-});
 // Route Home End
 
 
 //Route Admin
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
 
     // Dashboard
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
-  
+
     // Service
     Route::resource('/services', App\Http\Controllers\Admin\ServiceController::class);
 
@@ -60,5 +55,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     // Document
     Route::resource('/document', App\Http\Controllers\Admin\DocumentController::class);
+
+    // Account 
+    Route::get('/account', [\App\Http\Controllers\Admin\AccountController::class, 'index'])->name('account');
 });
 //Route Admin End

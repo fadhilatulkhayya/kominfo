@@ -47,6 +47,26 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item{{ request()->is('admin/account') ? ' active' : '' }}">
+                    <a class="sidebar-link" href="{{ route('admin.account') }}">
+                        <i class="bi bi-person-circle"></i>
+                        <span> {{ __('Akun') }}</span>
+                    </a>
+                </li>
+
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                        <i class="bi bi-door-open-fill"></i>
+                        <span> {{ __('Logout') }}</span>
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </li>
+
             </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>

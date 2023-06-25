@@ -76,7 +76,8 @@
 <script src="{{ asset('template/dashboard') }}/js/animation.js"></script>
 <script src="{{ asset('template/dashboard') }}/js/imagesloaded.js"></script>
 <script src="{{ asset('template/dashboard') }}/js/custom.js"></script>
-
+<script src="{{ url('https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.js') }}"></script>
+@stack('script')
 </body>
 
 </html>

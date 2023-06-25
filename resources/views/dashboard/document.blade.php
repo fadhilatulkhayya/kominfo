@@ -18,7 +18,37 @@
                                       </div>
                                   </div>
                                   <div class="col-lg-12">
-                                      <h4 class="text-center">Maaf, belum ada data</h4>
+                                      <div class="card">
+                                          <div class="card-body">
+                                              <table class='table table-striped' id="table1">
+                                                  <thead>
+                                                      <tr>
+                                                          <th>No</th>
+                                                          <th>Nama</th>
+                                                          <th>Download</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                      @forelse($documents as $document)
+                                                          <tr>
+                                                              <td>{{ $loop->iteration }}</td>
+                                                              <td>{{ $document->name }}</td>
+                                                              <td><a class="btn btn-primary"
+                                                                      href="{{ url('storage/upload/document/' . $document->file) }}"
+                                                                      role="button" download><i class="fa fa-download"></i>
+                                                                      Downloads</a>
+                                                              </td>
+                                                          </tr>
+                                                      @empty
+                                                          <tr>
+                                                              <td colspan="4" class="text-center">Maaf, belum ada data
+                                                              </td>
+                                                          </tr>
+                                                      @endforelse
+                                                  </tbody>
+                                              </table>
+                                          </div>
+                                      </div>
                                   </div>
                               </div>
 
@@ -30,3 +60,14 @@
       </div>
       </div>
   @endsection
+
+  @push('script')
+      <script>
+          $(document).ready(function() {
+              $('#table1').DataTable({
+                  scrollCollapse: true,
+              });
+
+          });
+      </script>
+  @endpush

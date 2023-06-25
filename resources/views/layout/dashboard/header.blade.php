@@ -70,9 +70,11 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li><a href="{{ route('document') }}" class="@yield('menuDocument')">Dokumen</a></li>
                             <li><a href="{{ route('majalah') }}" class="@yield('menuEMagazine')">E-Magazine</a></li>
                             </li>
                             <li><a href="{{ route('layanan') }}" class="@yield('menuLayanan')">Layanan</a></li>
+
                             <li></li>
                         </ul>
                         <a class='menu-trigger'>

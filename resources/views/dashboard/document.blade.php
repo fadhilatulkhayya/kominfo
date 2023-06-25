@@ -1,6 +1,6 @@
   @extends('dashboard')
-  @section('title', 'E-Magazine')
-  @section('menuEMagazine', 'active')
+  @section('title', 'Dokumen')
+  @section('menuDocument', 'active')
 
   @section('content')
       <div id="services" class="services section">
@@ -13,7 +13,7 @@
                                   <div class="col-lg-12 offset-lg-12  wow fadeInDown" data-wow-duration="1s"
                                       data-wow-delay="0.3s">
                                       <div class="section-heading">
-                                          <h4>E-Magazine</h4>
+                                          <h4>Dokumen</h4>
                                           <div class="line-dec"></div>
                                       </div>
                                   </div>

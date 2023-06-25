@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 // Route Home
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/menu-document', [App\Http\Controllers\HomeController::class, 'document'])->name('document');
 Route::get('/menu-majalah', [App\Http\Controllers\HomeController::class, 'majalah'])->name('majalah');
 Route::get('/menu-layanan', [App\Http\Controllers\HomeController::class, 'layanan'])->name('layanan');
 Route::get('/menu-kepala-dinas', [App\Http\Controllers\HomeController::class, 'kepalaDinas'])->name('kepalaDinas');

@@ -21,33 +21,11 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-
-                <li class="sidebar-item has-sub @yield('menuProfil')">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-person"></i>
-                        <span>Profil</span>
-                    </a>
-                    <ul class="submenu ">
-                        <li class="submenu-item ">
-                            <a href="{{ route('admin.kepaladinas.index') }}">Sambutan Kepala Dinas</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="{{ route('admin.visimisi.index') }}">Visi & Misi</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="{{ route('admin.tupoksi.index') }}">Tugas Pokok & Fungsi</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="{{ route('admin.strukturorganisasi.index') }}">Struktur Organisasi</a>
-                        </li>
-                    </ul>
-                </li>
-
                 <li class="sidebar-item @yield('menuDocument')">
                     <a href="{{ route('admin.document.index') }}" class='sidebar-link'>
-                      <i class="bi bi-file-earmark-richtext-fill"></i>
+                        <i class="bi bi-file-earmark-richtext-fill"></i>
                         <span>Dokumen</span>
-                        </a>
+                    </a>
                 <li class="sidebar-item has-sub {{ request()->is('admin/profile*') ? 'active open' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-person"></i>

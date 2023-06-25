@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\Majalah;
+namespace App\Http\Requests\Admin\Document;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Str;
 
-class UpdateMajalahRequest extends FormRequest
+class UpdateDocumentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,13 +12,6 @@ class UpdateMajalahRequest extends FormRequest
     public function authorize(): bool
     {
         return true;
-    }
-
-    protected function prepareForValidation()
-    {
-        $this->merge([
-            'slug' => Str::slug($this->input('name')),
-        ]);
     }
 
     /**
@@ -31,9 +23,7 @@ class UpdateMajalahRequest extends FormRequest
     {
         return [
             'name' => 'required|min:10',
-            'cover' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'slug' => 'required|min:10',
-            'file' => 'nullable|mimes:pdf|max:20000'
+            'file' => 'required|mimes:pdf|max:20000'
         ];
     }
 }

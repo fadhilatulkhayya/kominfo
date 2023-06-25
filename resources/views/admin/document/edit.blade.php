@@ -1,6 +1,6 @@
 @extends('admin')
 @section('title', 'Diskominfo Bone Bolango - Edit Majalah')
-@section('menuMajalah', 'active')
+@section('menuDokumen', 'active')
 
 @section('content')
     <div id="main">
@@ -11,7 +11,7 @@
         </header>
 
         <div class="page-heading">
-            <h3>Edit E-Magazine</h3>
+            <h3>Edit Dokumen</h3>
         </div>
         <div class="page-content">
             <section class="row">
@@ -21,14 +21,14 @@
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form action="{{ route('admin.majalah.update', $majalah->id) }}" method="POST"
+                                        <form action="{{ route('admin.document.update', $document->id) }}" method="POST"
                                             enctype="multipart/form-data">
                                             @csrf
                                             @method('PATCH')
-                                            @include('admin.majalah.include.form')
+                                            @include('admin.document.include.form')
                                             <div class="mt-2">
                                                 <button type="submit" class="btn btn-primary me-2">Simpan</button>
-                                                <a href="{{ route('admin.majalah.index') }}"
+                                                <a href="{{ route('admin.document.index') }}"
                                                     class="btn btn-outline-secondary">Kembali</a>
                                             </div>
                                         </form>

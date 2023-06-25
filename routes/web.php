@@ -32,14 +32,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     // Dashboard
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 
-    // Service
-    Route::resource('/services', App\Http\Controllers\Admin\ServiceController::class);
-
     // Kepala Dinas
     Route::resource('/kepaladinas', App\Http\Controllers\Admin\KepalaDinasController::class);
-
-    // Majalah
-    Route::resource('/majalah', App\Http\Controllers\Admin\MajalahController::class);
 
     // Struktur Organisasi
     Route::resource('/strukturorganisasi', App\Http\Controllers\Admin\StrukturOrganisasiController::class);
@@ -49,5 +43,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     // Visi Misi
     Route::resource('/visimisi', App\Http\Controllers\Admin\VisiMisiController::class);
+
+    // Service
+    Route::resource('/services', App\Http\Controllers\Admin\ServiceController::class);
+
+    // Document
+    Route::resource('/document', App\Http\Controllers\Admin\DocumentController::class);
 });
 //Route Admin End

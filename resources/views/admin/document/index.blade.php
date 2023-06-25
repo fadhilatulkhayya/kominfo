@@ -1,6 +1,6 @@
 @extends('admin')
-@section('title', 'Diskominfo Bone Bolango - Majalah')
-@section('menuMajalah', 'active')
+@section('title', 'Diskominfo Bone Bolango - Dokumen')
+@section('menuDocument', 'active')
 
 @section('content')
     <div id="main">
@@ -11,7 +11,7 @@
         </header>
 
         <div class="page-heading">
-            <h3>E-Magazine</h3>
+            <h3>Dokumen</h3>
         </div>
         <div class="page-content">
             <section class="row">
@@ -20,7 +20,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <a class="btn btn-sm btn-primary" href="{{ route('admin.majalah.create') }}">
+                                    <a class="btn btn-sm btn-primary" href="{{ route('admin.document.create') }}">
                                         Tambah Data</a>
                                 </div>
                                 <div class="card-body">
@@ -28,24 +28,21 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Cover</th>
-                                                <th>E-Magazine</th>
-                                                <th>Judul</th>
+                                                <th>Nama</th>
+                                                <th>File</th>
                                                 <th>Opsi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse($majalahs as $majalah)
+                                            @forelse($documents as $document)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td><img src="{{ asset('storage/upload/majalah/cover/' . $majalah->cover) }}"
-                                                            class="img-thumbnail" width="200" height="150"
-                                                            style="object-fit: cover" /></td>
-                                                    <td><a href="{{ url('storage/upload/majalah/' . $majalah->file) }}"
-                                                            target="_blank">{{ $majalah->name }}</a>
+                                                    <td>{{ $document->name }}</td>
+                                                    <td><a href="{{ url('storage/upload/document/' . $document->file) }}"
+                                                            target="_blank">{{ $document->name }}</a>
                                                     </td>
-                                                    <td>{{ $majalah->name }}</td>
-                                                    <td>@include('admin.majalah.include.action')</td>
+                                                    <td>{{ $document->name }}</td>
+                                                    <td>@include('admin.document.include.action')</td>
                                                 </tr>
                                             @empty
                                                 <tr>

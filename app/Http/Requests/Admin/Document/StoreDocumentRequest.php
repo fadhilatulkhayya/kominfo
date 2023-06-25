@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\Majalah;
+namespace App\Http\Requests\Admin\Document;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Str;
 
-class StoreMajalahRequest extends FormRequest
+class StoreDocumentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,13 +12,6 @@ class StoreMajalahRequest extends FormRequest
     public function authorize(): bool
     {
         return true;
-    }
-
-    protected function prepareForValidation()
-    {
-        $this->merge([
-            'slug' => Str::slug($this->input('name')),
-        ]);
     }
 
     /**
@@ -31,8 +23,6 @@ class StoreMajalahRequest extends FormRequest
     {
         return [
             'name' => 'required|min:10',
-            'cover' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'slug' => 'required|min:10',
             'file' => 'required|mimes:pdf|max:20000'
         ];
     }

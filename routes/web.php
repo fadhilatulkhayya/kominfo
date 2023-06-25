@@ -37,6 +37,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     // Dashboard
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+  
+    // Service
+    Route::resource('/services', App\Http\Controllers\Admin\ServiceController::class);
+
+    Route::resource('/profile', App\Http\Controllers\Admin\ProfileController::class)->except('index', 'create', 'store', 'destroy');
 
     // Kepala Dinas
     Route::resource('/kepaladinas', App\Http\Controllers\Admin\KepalaDinasController::class);

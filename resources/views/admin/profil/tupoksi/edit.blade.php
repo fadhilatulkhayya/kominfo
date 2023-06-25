@@ -31,6 +31,8 @@
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-12 col-12 mb-2">
+                                                    <label for="isi_tupoksi">Tugas Pokok & Fungsi<span class="text-danger">
+                                                            &#42;</span> :</label>
                                                     <textarea class="form-control @error('isi_tupoksi') is-invalid @enderror" name="isi_tupoksi" id="summernote"
                                                         cols="30" rows="10">{{ $tupoksi->isi_tupoksi }}</textarea>
                                                     @error('isi_tupoksi')

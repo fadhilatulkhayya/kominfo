@@ -15,7 +15,7 @@ class KepalaDinasController extends Controller
      */
     public function index()
     {
-        $kepaladinas = KepalaDinas::all();
+        $kepaladinas = KepalaDinas::latest()->get();
         return view('admin.profil.kepala_dinas.index', compact('kepaladinas'));
     }
 
@@ -60,7 +60,7 @@ class KepalaDinasController extends Controller
 
         if ($request->file('photo') && $request->file('photo')->isValid()) {
 
-            $path = storage_path('app/public/profile/');
+            $path = storage_path('app/public/upload/profile/');
             $filename = $request->file('photo')->hashName();
 
             if (!file_exists($path)) {

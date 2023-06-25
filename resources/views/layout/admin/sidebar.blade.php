@@ -43,6 +43,11 @@
                     </ul>
                 </li>
 
+                <li class="sidebar-item @yield('menuDocument')">
+                    <a href="{{ route('admin.document.index') }}" class='sidebar-link'>
+                      <i class="bi bi-file-earmark-richtext-fill"></i>
+                        <span>Dokumen</span>
+                        </a>
                 <li class="sidebar-item has-sub {{ request()->is('admin/profile*') ? 'active open' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-person"></i>
@@ -56,13 +61,6 @@
                             </li>
                         @endforeach
                     </ul>
-                </li>
-
-                <li class="sidebar-item @yield('menuMajalah')">
-                    <a href="{{ route('admin.majalah.index') }}" class='sidebar-link'>
-                        <i class="bi bi-file-earmark-richtext-fill"></i>
-                        <span>E-Magazine</span>
-                    </a>
                 </li>
                 <li class="sidebar-item @yield('menuLayanan')">
                     <a href="{{ route('admin.services.index') }}" class='sidebar-link'>

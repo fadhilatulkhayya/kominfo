@@ -53,26 +53,28 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="" class="logo">
+                        <a href="/" class="logo">
                             <img src="{{ asset('template/dashboard') }}/images/logo-diskominfo1.png" alt="">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="/" class="@yield('menuBeranda')">Beranda</a></li>
+                            <li><a href="{{ route('home') }}" class="@yield('menuBeranda')">Beranda</a></li>
                             <li class="submenu">
-                                <a href="#" class="@yield('menuProfil')">Profil</a>
+                                <a href="#profil" class="@yield('menuProfil')">Profil</a>
                                 <ul>
-                                    <li><a href="/menu-kepala-dinas">Kepala Dinas</a></li>
-                                    <li><a href="/menu-visi-misi">Visi & Misi</a></li>
-                                    <li><a href="/menu-tupoksi">Tugas Pokok & Fungsi</a></li>
-                                    <li><a href="/menu-struktur-organisasi">Struktur Organisasi</a>
+                                    <li><a href="{{ route('kepalaDinas') }}">Kepala Dinas</a></li>
+                                    <li><a href="{{ route('visiMisi') }}">Visi & Misi</a></li>
+                                    <li><a href="{{ route('tupoksi') }}">Tugas Pokok & Fungsi</a></li>
+                                    <li><a href="{{ route('strukturOrganisasi') }}">Struktur Organisasi</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="/menu-majalah" class="@yield('menuEMagazine')">E-Magazine</a></li>
+                            <li><a href="{{ route('document') }}" class="@yield('menuDocument')">Dokumen</a></li>
+                            <li><a href="{{ route('majalah') }}" class="@yield('menuEMagazine')">E-Magazine</a></li>
                             </li>
-                            <li><a href="/menu-layanan" class="@yield('menuLayanan')">Layanan</a></li>
+                            <li><a href="{{ route('layanan') }}" class="@yield('menuLayanan')">Layanan</a></li>
+
                             <li></li>
                         </ul>
                         <a class='menu-trigger'>

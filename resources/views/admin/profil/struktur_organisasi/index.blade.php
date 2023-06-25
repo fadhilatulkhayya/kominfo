@@ -33,7 +33,7 @@
                                         <tbody>
                                             @forelse ($strukturorganisasis as $strukturorganisasi)
                                                 <tr>
-                                                    <td><img src="{{ asset('storage/profile/' . $strukturorganisasi->gambar) }}"
+                                                    <td><img src="{{ asset('storage/upload/profile/' . $strukturorganisasi->gambar) }}"
                                                             class="img-thumbnail" width="200" height="150"
                                                             style="object-fit: cover" /></td>
                                                     <td>{{ Str::limit($strukturorganisasi->caption, 100) }}</td>

@@ -33,7 +33,7 @@
                                         <tbody>
                                             @forelse ($kepaladinas as $kepaladina)
                                                 <tr>
-                                                    <td><img src="{{ asset('storage/profile/' . $kepaladina->photo) }}"
+                                                    <td><img src="{{ asset('storage/upload/profile/' . $kepaladina->photo) }}"
                                                             class="img-thumbnail" width="200" height="150"
                                                             style="object-fit: cover" /></td>
                                                     <td>{!! substr(strip_tags($kepaladina->sambutan), 0, 418) !!}</td>

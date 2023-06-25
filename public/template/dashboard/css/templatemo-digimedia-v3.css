@@ -1774,6 +1774,10 @@ Blog
 .post-item .thumb img {
     border-radius: 23px;
     display: inline-block;
+    object-fit: cover;
+    object-position: center;
+    width: 230px;
+    height: 230px;
 }
 
 .post-item .right-content {
@@ -1801,8 +1805,8 @@ Blog
     font-size: 20px;
     font-weight: 700;
     color: #2a2a2a;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     line-height: 30px;
 }
 
@@ -2150,7 +2154,11 @@ responsive
         margin-bottom: 30px;
     }
     .post-item .thumb img {
-        max-width: 140px;
+        max-height: 150px;
+        max-width: 150px;
+    }
+    .post-item .right-content h4 {
+        font-size: 14px;
     }
     .post-item .right-content p {
         display: none;
@@ -2160,5 +2168,10 @@ responsive
     }
     form#contact {
         padding: 30px;
+    }
+
+    .img-detail-berita {
+        max-height: 50px;
+        max-width: 50px;
     }
 }

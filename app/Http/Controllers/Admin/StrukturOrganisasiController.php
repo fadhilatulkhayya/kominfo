@@ -15,7 +15,8 @@ class StrukturOrganisasiController extends Controller
      */
     public function index()
     {
-        $strukturorganisasis = StrukturOrganisasi::all();
+        $strukturorganisasis =
+            StrukturOrganisasi::latest()->get();
         return view('admin.profil.struktur_organisasi.index', compact('strukturorganisasis'));
     }
 
@@ -60,7 +61,7 @@ class StrukturOrganisasiController extends Controller
 
         if ($request->file('gambar') && $request->file('gambar')->isValid()) {
 
-            $path = storage_path('app/public/profile/');
+            $path = storage_path('app/public/upload/profile/');
             $filename = $request->file('gambar')->hashName();
 
             if (!file_exists($path)) {

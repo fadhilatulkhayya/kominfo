@@ -28,7 +28,8 @@
                                             <div class="row">
                                                 <div class="col-md-12 col-12">
                                                     <div class="form-group">
-                                                        <label for="first-name-column">Visi : </label>
+                                                        <label for="first-name-column">Visi<span class="text-danger">
+                                                                &#42;</span> :</label>
                                                         <textarea class="form-control @error('visi') is-invalid @enderror" rows="3" name="visi">{{ $visimisi->visi }}</textarea>
                                                         @error('visi')
                                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -37,7 +38,8 @@
                                                 </div>
                                                 <div class="col-md-12 col-12">
                                                     <div class="form-group">
-                                                        <label for="last-name-column">Misi : </label>
+                                                        <label for="last-name-column">Misi<span class="text-danger">
+                                                                &#42;</span> :</label>
                                                         <textarea class="form-control @error('misi') is-invalid @enderror" rows="3" name="misi">{{ $visimisi->misi }}</textarea>
                                                         @error('misi')
                                                             <div class="invalid-feedback">{{ $message }}</div>

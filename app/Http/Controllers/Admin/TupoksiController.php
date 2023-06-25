@@ -14,7 +14,8 @@ class TupoksiController extends Controller
      */
     public function index()
     {
-        $tupoksis = Tupoksi::all();
+        $tupoksis =
+            Tupoksi::latest()->get();
         return view('admin.profil.tupoksi.index', compact('tupoksis'));
     }
 

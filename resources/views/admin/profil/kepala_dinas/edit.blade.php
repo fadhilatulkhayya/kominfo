@@ -37,7 +37,7 @@
                                                             <div class="form-group">
                                                                 @if ($kepaladina->photo == null)
                                                                     <label for="photo" class="form-label">Gambar
-                                                                        Lama</label>
+                                                                        Lama </label>
                                                                     <br>
                                                                     <img src="https://via.placeholder.com/350?text=No+Image+Avaiable"
                                                                         alt="photo" class="img-thumbnail" alt="photo"
@@ -45,9 +45,9 @@
                                                                         style="object-fit: cover">
                                                                 @else
                                                                     <label for="photo" class="form-label">Gambar
-                                                                        Lama</label>
+                                                                        Lama </label>
                                                                     <br>
-                                                                    <img src="{{ asset('storage/profile/' . $kepaladina->photo) }}"
+                                                                    <img src="{{ asset('storage/upload/profile/' . $kepaladina->photo) }}"
                                                                         alt="Thumbnail" class="img-thumbnail" width="125"
                                                                         height="75" style="object-fit: cover">
                                                                 @endif
@@ -56,7 +56,8 @@
                                                         <div class="col-md-9">
                                                             <div class="form-group">
                                                                 <label for="photo" class="form-label">Pilih Foto
-                                                                    Terbaru :</label>
+                                                                    Terbaru<span class="text-danger">
+                                                                        &#42;</span> :</label>
                                                                 <input
                                                                     class="form-control  @error('photo') is-invalid @enderror"
                                                                     type="file" name="photo" />
@@ -68,7 +69,8 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-12 col-12 mb-2">
-                                                            <label for="sambutan">Kata Sambutan Kepala Dinas : </label>
+                                                            <label for="sambutan">Kata Sambutan Kepala Dinas<span
+                                                                    class="text-danger"> &#42;</span> :</label>
                                                             <textarea class="form-control @error('sambutan') is-invalid @enderror" name="sambutan" id="summernote" cols="30"
                                                                 rows="10">{{ $kepaladina->sambutan }}</textarea>
                                                             @error('sambutan')

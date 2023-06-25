@@ -38,7 +38,7 @@
       <div id="blog" class="blog">
           <div class="container">
               <div class="row">
-                  <div class="col-lg-4 offset-lg-4  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
+                  <div class="col-lg-4 offset-lg-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
                       <div class="section-heading">
                           <h6>Informasi</h6>
                           <h4>Informasi Publik</h4>
@@ -51,76 +51,70 @@
                               <div class="col-lg-12">
                                   <div class="post-item">
                                       <div class="thumb">
-                                          <a href="#"><img
-                                                  src="{{ asset('template/dashboard') }}/images/blog-post-02.jpg"
-                                                  alt=""></a>
+                                          <a href="{{ route('detailBerita', $articles['data'][0]['slug']) }}"><img
+                                                  src="{{ $articles['data'][0]['thumbnail'] }}" alt=""></a>
                                       </div>
                                       <div class="right-content">
-                                          <span class="category">SEO Analysis</span>
-                                          <span class="date">24 September 2021</span>
-                                          <a href="#">
-                                              <h4>Lorem Ipsum Dolor Sit Amei Eiusmod Tempor</h4>
+                                          <span class="category">{{ $articles['data'][0]['category'] }}</span>
+                                          <span class="date">{{ $articles['data'][0]['published_at'] }}</span>
+                                          <a href="{{ route('detailBerita', $articles['data'][0]['slug']) }}">
+                                              <h4>{{ $articles['data'][0]['title'] }}</h4>
                                           </a>
-                                          <p>Lorem ipsum dolor sit amet, cocteturi adipiscing eliterski.</p>
+                                          <p>{{ Str::limit($articles['data'][0]['caption'], 150, '....') }}</p>
                                       </div>
                                   </div>
                               </div>
                               <div class="col-lg-12">
                                   <div class="post-item">
                                       <div class="thumb">
-                                          <a href="#"><img
-                                                  src="{{ asset('template/dashboard') }}/images/blog-post-03.jpg"
-                                                  alt=""></a>
+                                          <a href="{{ route('detailBerita', $articles['data'][2]['slug']) }}"><img
+                                                  src="{{ $articles['data'][2]['thumbnail'] }}" alt=""></a>
                                       </div>
                                       <div class="right-content">
-                                          <span class="category">SEO Analysis</span>
-                                          <span class="date">24 September 2021</span>
-                                          <a href="#">
-                                              <h4>Lorem Ipsum Dolor Sit Amei Eiusmod Tempor</h4>
+                                          <span class="category">{{ $articles['data'][2]['category'] }}</span>
+                                          <span class="date">{{ $articles['data'][2]['published_at'] }}</span>
+                                          <a href="{{ route('detailBerita', $articles['data'][2]['slug']) }}">
+                                              <h4>{{ $articles['data'][2]['title'] }}</h4>
                                           </a>
-                                          <p>Lorem ipsum dolor sit amet, cocteturi adipiscing eliterski.</p>
+                                          <p>{{ Str::limit($articles['data'][2]['caption'], 150, '....') }}</p>
                                       </div>
                                   </div>
                               </div>
-
                           </div>
                       </div>
                   </div>
                   <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                       <div class="blog-posts">
                           <div class="row">
-
                               <div class="col-lg-12">
                                   <div class="post-item">
                                       <div class="thumb">
-                                          <a href="#"><img
-                                                  src="{{ asset('template/dashboard') }}/images/blog-post-03.jpg"
-                                                  alt=""></a>
+                                          <a href="{{ route('detailBerita', $articles['data'][1]['slug']) }}"><img
+                                                  src="{{ $articles['data'][1]['thumbnail'] }}" alt=""></a>
                                       </div>
                                       <div class="right-content">
-                                          <span class="category">SEO Analysis</span>
-                                          <span class="date">24 September 2021</span>
-                                          <a href="#">
-                                              <h4>Lorem Ipsum Dolor Sit Amei Eiusmod Tempor</h4>
+                                          <span class="category">{{ $articles['data'][1]['category'] }}</span>
+                                          <span class="date">{{ $articles['data'][1]['published_at'] }}</span>
+                                          <a href="{{ route('detailBerita', $articles['data'][1]['slug']) }}">
+                                              <h4>{{ $articles['data'][1]['title'] }}</h4>
                                           </a>
-                                          <p>Lorem ipsum dolor sit amet, cocteturi adipiscing eliterski.</p>
+                                          <p>{{ Str::limit($articles['data'][1]['caption'], 150, '....') }}</p>
                                       </div>
                                   </div>
                               </div>
                               <div class="col-lg-12">
-                                  <div class="post-item last-post-item">
+                                  <div class="post-item">
                                       <div class="thumb">
-                                          <a href="#"><img
-                                                  src="{{ asset('template/dashboard') }}/images/blog-post-04.jpg"
-                                                  alt=""></a>
+                                          <a href="{{ route('detailBerita', $articles['data'][3]['slug']) }}"><img
+                                                  src="{{ $articles['data'][3]['thumbnail'] }}" alt=""></a>
                                       </div>
                                       <div class="right-content">
-                                          <span class="category">SEO Analysis</span>
-                                          <span class="date">24 September 2021</span>
-                                          <a href="#">
-                                              <h4>Lorem Ipsum Dolor Sit Amei Eiusmod Tempor</h4>
+                                          <span class="category">{{ $articles['data'][3]['category'] }}</span>
+                                          <span class="date">{{ $articles['data'][3]['published_at'] }}</span>
+                                          <a href="{{ route('detailBerita', $articles['data'][3]['slug']) }}">
+                                              <h4>{{ $articles['data'][3]['title'] }}</h4>
                                           </a>
-                                          <p>Lorem ipsum dolor sit amet, cocteturi adipiscing eliterski.</p>
+                                          <p>{{ Str::limit($articles['data'][3]['caption'], 150, '....') }}</p>
                                       </div>
                                   </div>
                               </div>
@@ -128,8 +122,10 @@
                       </div>
                   </div>
               </div>
+
           </div>
       </div>
+
 
       <div id="services" class="services section">
           <div class="container">
@@ -180,7 +176,8 @@
                                                                       pemrograman dan teknologi web untuk membuat halaman
                                                                       web yang dapat diakses melalui internet.</p>
                                                                   <div class="ticks-list"><span><i
-                                                                              class="fa fa-check"></i> Perencanaan</span>
+                                                                              class="fa fa-check"></i>
+                                                                          Perencanaan</span>
                                                                       <span><i class="fa fa-check"></i>
                                                                           Desain</span> <span><i class="fa fa-check"></i>
                                                                           Pengembangan</span>
@@ -218,7 +215,8 @@
                                                                       jawab untuk mengelola jaringan komputer dan sistem
                                                                       informasi.</p>
                                                                   <div class="ticks-list"><span><i
-                                                                              class="fa fa-check"></i> Pemasangan</span>
+                                                                              class="fa fa-check"></i>
+                                                                          Pemasangan</span>
                                                                       <span><i class="fa fa-check"></i>
                                                                           Pemantauan</span> <span><i
                                                                               class="fa fa-check"></i> Pemeliharaan</span>
@@ -252,7 +250,8 @@
                                                                       oleh undang-undang, sehingga memungkinkan masyarakat
                                                                       untuk memperoleh informasi yang diperlukan</p>
                                                                   <div class="ticks-list"><span><i
-                                                                              class="fa fa-check"></i> Berita Daerah</span>
+                                                                              class="fa fa-check"></i>
+                                                                          Berita Daerah</span>
                                                                       <span><i class="fa fa-check"></i> Berita
                                                                           Pemerintahan</span><span><i
                                                                               class="fa fa-check"></i>
@@ -301,138 +300,30 @@
               <div class="row">
                   <div class="col-lg-12">
                       <div class="loop owl-carousel">
-                          <div class="item">
-                              <a href="#">
-                                  <div class="portfolio-item">
-                                      <div class="thumb">
-                                          <img src="{{ asset('template/dashboard') }}/images/portfolio-01.jpg"
-                                              alt="">
+
+                          @forelse ($services as $service)
+                              <div class="item">
+                                  <a href="https://{{ $service->url }}">
+                                      <div class="portfolio-item">
+                                          <div class="thumb">
+                                              <img src="{{ asset('storage/upload/layanan/' . $service->thumbnail) }}"
+                                                  alt="">
+                                          </div>
+                                          <div class="down-content">
+                                              <h4>{{ $service->name }}</h4>
+                                          </div>
                                       </div>
-                                      <div class="down-content">
-                                          <h4>Website Builder</h4>
-                                          <span>Marketing</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="item">
-                              <a href="#">
-                                  <div class="portfolio-item">
-                                      <div class="thumb">
-                                          <img src="{{ asset('template/dashboard') }}/images/portfolio-01.jpg"
-                                              alt="">
-                                      </div>
-                                      <div class="down-content">
-                                          <h4>Website Builder</h4>
-                                          <span>Marketing</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="item">
-                              <a href="#">
-                                  <div class="portfolio-item">
-                                      <div class="thumb">
-                                          <img src="{{ asset('template/dashboard') }}/images/portfolio-02.jpg"
-                                              alt="">
-                                      </div>
-                                      <div class="down-content">
-                                          <h4>Website Builder</h4>
-                                          <span>Marketing</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="item">
-                              <a href="#">
-                                  <div class="portfolio-item">
-                                      <div class="thumb">
-                                          <img src="{{ asset('template/dashboard') }}/images/portfolio-03.jpg"
-                                              alt="">
-                                      </div>
-                                      <div class="down-content">
-                                          <h4>Website Builder</h4>
-                                          <span>Marketing</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="item">
-                              <a href="#">
-                                  <div class="portfolio-item">
-                                      <div class="thumb">
-                                          <img src="{{ asset('template/dashboard') }}/images/portfolio-04.jpg"
-                                              alt="">
-                                      </div>
-                                      <div class="down-content">
-                                          <h4>Website Builder</h4>
-                                          <span>Marketing</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
+                                  </a>
+                              </div>
+                          @empty
+                              <h4>Maaf, belum ada data</h4>
+                          @endforelse
+
                       </div>
                   </div>
               </div>
           </div>
       </div>
 
-      <div id="contact" class="contact-us section">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-6 offset-lg-3">
-                      <div class="section-heading wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                          <h6>Kontak</h6>
-                          <h4>Kontak Kami</h4>
-                          <div class="line-dec"></div>
-                      </div>
-                  </div>
-                  <div class="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">
-                      <form id="contact" action="" method="post">
-                          <div class="row">
-                              <div class="col-lg-12">
-                                  <div class="contact-dec">
-                                      <img src="{{ asset('template/dashboard') }}/images/contact-dec-v3.png"
-                                          alt="">
-                                  </div>
-                              </div>
-                              <div class="col-lg-5">
-                                  <div id="map">
-                                      {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d821.7428144626006!2d123.14586857839767!3d0.5566138340711226!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x327ed46cda596ebd%3A0x77dce7688fbca67b!2sDinas%20Komunikasi%20dan%20Informatika%20Kabupaten%20Bone%20Bolango!5e0!3m2!1sen!2sid!4v1677577070465!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
-                                      <iframe
-                                          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d821.7428144626006!2d123.14586857839767!3d0.5566138340711226!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x327ed46cda596ebd%3A0x77dce7688fbca67b!2sDinas%20Komunikasi%20dan%20Informatika%20Kabupaten%20Bone%20Bolango!5e0!3m2!1sen!2sid!4v1677577070465!5m2!1sen!2sid"
-                                          width="100%" height="636px" frameborder="0" style="border:0"
-                                          allowfullscreen></iframe>
-                                  </div>
-                              </div>
-                              <div class="col-lg-7">
-                                  <div class="fill-form">
-                                      <div class="row">
-                                          <div class="col-lg-6">
-                                              <div class="info-post">
-                                                  <div class="icon">
-                                                      <img src="{{ asset('template/dashboard') }}/images/phone-icon.png"
-                                                          alt="">
-                                                      <a href="#">010-020-0340</a>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <div class="col-lg-6">
-                                              <div class="info-post">
-                                                  <div class="icon">
-                                                      <img src="{{ asset('template/dashboard') }}/images/email-icon.png"
-                                                          alt="">
-                                                      <a href="#">kominfo@bonebolangokab.go.id</a>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
+
   @endsection

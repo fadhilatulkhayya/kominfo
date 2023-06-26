@@ -15,7 +15,7 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['layout.admin.sidebar'], function ($view) {
+        View::composer(['layout.admin.sidebar', 'layout.dashboard.header'], function ($view) {
             $view->with('profiles', Profile::all());
         });
     }

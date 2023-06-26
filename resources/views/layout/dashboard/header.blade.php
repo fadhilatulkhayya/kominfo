@@ -64,11 +64,10 @@
                             <li class="submenu">
                                 <a href="#profil" class="@yield('menuProfil')">Profil</a>
                                 <ul>
-                                    <li><a href="{{ route('kepalaDinas') }}">Kepala Dinas</a></li>
-                                    <li><a href="{{ route('visiMisi') }}">Visi & Misi</a></li>
-                                    <li><a href="{{ route('tupoksi') }}">Tugas Pokok & Fungsi</a></li>
-                                    <li><a href="{{ route('strukturOrganisasi') }}">Struktur Organisasi</a>
-                                    </li>
+                                    @foreach ($profiles as $data)
+                                        <li><a href="{{ route('profil', $data->slug) }}">{{ $data->title }}</a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li><a href="{{ route('document') }}" class="@yield('menuDocument')">Dokumen</a></li>

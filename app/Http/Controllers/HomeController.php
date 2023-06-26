@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Service;
-use App\Models\KepalaDinas;
-use App\Models\VisiMisi;
-use App\Models\Tupoksi;
 use App\Models\Document;
-use App\Models\StrukturOrganisasi;
+use App\Models\Profile;
 use GuzzleHttp\Client;
 
 class HomeController extends Controller
@@ -39,29 +36,9 @@ class HomeController extends Controller
         return view('dashboard.layanan', compact('services'));
     }
 
-    public function kepalaDinas()
+    public function profile(Profile $profile)
     {
-        $kepaladinas = KepalaDinas::where('id', 1)->get();
-
-        return view('dashboard.profil.kepaladinas', compact('kepaladinas'));
-    }
-
-    public function visiMisi()
-    {
-        $visimisis = VisiMisi::where('id', 1)->get();
-        return view('dashboard.profil.visimisi', compact('visimisis'));
-    }
-
-    public function tupoksi()
-    {
-        $tupoksis = Tupoksi::where('id', 1)->get();
-        return view('dashboard.profil.tupoksi', compact('tupoksis'));
-    }
-
-    public function strukturOrganisasi()
-    {
-        $strukturOrganisasis = StrukturOrganisasi::where('id', 1)->get();
-        return view('dashboard.profil.strukturorganisasi', compact('strukturOrganisasis'));
+        return view('dashboard.profile', compact('profile'));
     }
 
     public function detailBerita($slug)

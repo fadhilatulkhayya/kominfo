@@ -18,10 +18,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/menu-document', [App\Http\Controllers\HomeController::class, 'document'])->name('document');
 Route::get('/menu-majalah', [App\Http\Controllers\HomeController::class, 'majalah'])->name('majalah');
 Route::get('/menu-layanan', [App\Http\Controllers\HomeController::class, 'layanan'])->name('layanan');
-Route::get('/menu-kepala-dinas', [App\Http\Controllers\HomeController::class, 'kepalaDinas'])->name('kepalaDinas');
-Route::get('/menu-visi-misi', [App\Http\Controllers\HomeController::class, 'visiMisi'])->name('visiMisi');
-Route::get('/menu-tupoksi', [App\Http\Controllers\HomeController::class, 'tupoksi'])->name('tupoksi');
-Route::get('/menu-struktur-organisasi', [App\http\Controllers\HomeController::class, 'strukturOrganisasi'])->name('strukturOrganisasi');
+Route::get('/profil/{profile}', [App\Http\Controllers\HomeController::class, 'profile'])->name('profil');
 
 Route::get('/detail-berita/{slug}', [App\Http\Controllers\HomeController::class, 'detailBerita'])->name('detailBerita');
 // Route Home End

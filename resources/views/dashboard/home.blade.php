@@ -51,13 +51,13 @@
                               <div class="col-lg-12">
                                   <div class="post-item">
                                       <div class="thumb">
-                                          <a href="{{ route('detailBerita', $articles['data'][0]['slug']) }}"><img
+                                          <a href="{{ $articles['data'][0]['url'] }}"><img
                                                   src="{{ $articles['data'][0]['thumbnail'] }}" alt=""></a>
                                       </div>
                                       <div class="right-content">
                                           <span class="category">{{ $articles['data'][0]['category'] }}</span>
                                           <span class="date">{{ $articles['data'][0]['published_at'] }}</span>
-                                          <a href="{{ route('detailBerita', $articles['data'][0]['slug']) }}">
+                                          <a href="{{ $articles['data'][0]['url'] }}">
                                               <h4>{{ $articles['data'][0]['title'] }}</h4>
                                           </a>
                                           <p>{{ Str::limit($articles['data'][0]['caption'], 150, '....') }}</p>
@@ -67,13 +67,13 @@
                               <div class="col-lg-12">
                                   <div class="post-item">
                                       <div class="thumb">
-                                          <a href="{{ route('detailBerita', $articles['data'][2]['slug']) }}"><img
+                                          <a href="{{ $articles['data'][2]['url'] }}"><img
                                                   src="{{ $articles['data'][2]['thumbnail'] }}" alt=""></a>
                                       </div>
                                       <div class="right-content">
                                           <span class="category">{{ $articles['data'][2]['category'] }}</span>
                                           <span class="date">{{ $articles['data'][2]['published_at'] }}</span>
-                                          <a href="{{ route('detailBerita', $articles['data'][2]['slug']) }}">
+                                          <a href="{{ $articles['data'][2]['url'] }}">
                                               <h4>{{ $articles['data'][2]['title'] }}</h4>
                                           </a>
                                           <p>{{ Str::limit($articles['data'][2]['caption'], 150, '....') }}</p>
@@ -89,13 +89,13 @@
                               <div class="col-lg-12">
                                   <div class="post-item">
                                       <div class="thumb">
-                                          <a href="{{ route('detailBerita', $articles['data'][1]['slug']) }}"><img
+                                          <a href="{{ $articles['data'][1]['url'] }}"><img
                                                   src="{{ $articles['data'][1]['thumbnail'] }}" alt=""></a>
                                       </div>
                                       <div class="right-content">
                                           <span class="category">{{ $articles['data'][1]['category'] }}</span>
                                           <span class="date">{{ $articles['data'][1]['published_at'] }}</span>
-                                          <a href="{{ route('detailBerita', $articles['data'][1]['slug']) }}">
+                                          <a href="{{ $articles['data'][1]['url'] }}">
                                               <h4>{{ $articles['data'][1]['title'] }}</h4>
                                           </a>
                                           <p>{{ Str::limit($articles['data'][1]['caption'], 150, '....') }}</p>
@@ -105,13 +105,13 @@
                               <div class="col-lg-12">
                                   <div class="post-item">
                                       <div class="thumb">
-                                          <a href="{{ route('detailBerita', $articles['data'][3]['slug']) }}"><img
+                                          <a href="{{ $articles['data'][3]['url'] }}"><img
                                                   src="{{ $articles['data'][3]['thumbnail'] }}" alt=""></a>
                                       </div>
                                       <div class="right-content">
                                           <span class="category">{{ $articles['data'][3]['category'] }}</span>
                                           <span class="date">{{ $articles['data'][3]['published_at'] }}</span>
-                                          <a href="{{ route('detailBerita', $articles['data'][3]['slug']) }}">
+                                          <a href="{{ $articles['data'][3]['url'] }}">
                                               <h4>{{ $articles['data'][3]['title'] }}</h4>
                                           </a>
                                           <p>{{ Str::limit($articles['data'][3]['caption'], 150, '....') }}</p>
@@ -300,7 +300,6 @@
               <div class="row">
                   <div class="col-lg-12">
                       <div class="loop owl-carousel">
-
                           @forelse ($services as $service)
                               <div class="item">
                                   <a href="https://{{ $service->url }}">
@@ -318,7 +317,6 @@
                           @empty
                               <h4>Maaf, belum ada data</h4>
                           @endforelse
-
                       </div>
                   </div>
               </div>

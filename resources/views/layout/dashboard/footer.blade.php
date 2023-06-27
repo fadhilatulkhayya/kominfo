@@ -70,13 +70,14 @@
 
 
 <!-- Scripts -->
-<script src="{{ asset('template/dashboard') }}/vendor/jquery/jquery.min.js"></script>
+{{-- <script src="{{ asset('template/dashboard') }}/vendor/jquery/jquery.min.js"></script> --}}
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <script src="{{ asset('template/dashboard') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('template/dashboard') }}/js/owl-carousel.js"></script>
 <script src="{{ asset('template/dashboard') }}/js/animation.js"></script>
 <script src="{{ asset('template/dashboard') }}/js/imagesloaded.js"></script>
 <script src="{{ asset('template/dashboard') }}/js/custom.js"></script>
-<script src="{{ url('https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.js') }}"></script>
 @stack('script')
 </body>
 

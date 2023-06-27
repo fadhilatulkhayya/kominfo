@@ -46,10 +46,6 @@ class ProfileController extends Controller
                 $filename = uniqid();
                 $filepath = ("storage/upload/profil/$filename.$mimetype");
 
-                if (!file_exists($filepath)) {
-                    mkdir($filepath, 0777, true);
-                }
-
                 $image = Image::make($src)->encode($mimetype, 100)->save($filepath);
 
                 $new_src = asset($filepath);

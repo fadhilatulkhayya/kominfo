@@ -74,7 +74,9 @@
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <script src="{{ asset('template/dashboard') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="{{ asset('template/dashboard') }}/js/owl-carousel.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{ asset('template/dashboard') }}/js/animation.js"></script>
 <script src="{{ asset('template/dashboard') }}/js/imagesloaded.js"></script>
 <script src="{{ asset('template/dashboard') }}/js/custom.js"></script>

@@ -33,19 +33,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     // Service
     Route::resource('/services', App\Http\Controllers\Admin\ServiceController::class);
 
+    // Profile
     Route::resource('/profile', App\Http\Controllers\Admin\ProfileController::class)->except('index', 'create', 'store', 'destroy');
-
-    // Kepala Dinas
-    Route::resource('/kepaladinas', App\Http\Controllers\Admin\KepalaDinasController::class);
-
-    // Struktur Organisasi
-    Route::resource('/strukturorganisasi', App\Http\Controllers\Admin\StrukturOrganisasiController::class);
-
-    // Tupoksi
-    Route::resource('/tupoksi', App\Http\Controllers\Admin\TupoksiController::class);
-
-    // Visi Misi
-    Route::resource('/visimisi', App\Http\Controllers\Admin\VisiMisiController::class);
 
     // Service
     Route::resource('/services', App\Http\Controllers\Admin\ServiceController::class);

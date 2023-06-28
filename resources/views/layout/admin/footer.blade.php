@@ -13,10 +13,6 @@
 </div>
 <script src="{{ asset('template/admin') }}/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <script src="{{ asset('template/admin') }}/js/bootstrap.bundle.min.js"></script>
-
-<script src="{{ asset('template/admin') }}/vendors/apexcharts/apexcharts.js"></script>
-<script src="{{ asset('template/admin') }}/js/pages/dashboard.js"></script>
-
 <script src="{{ asset('template/admin') }}/js/main.js"></script>
 <script src="{{ asset('template/admin') }}/vendors/jquery/jquery.min.js"></script>
 @stack('script')

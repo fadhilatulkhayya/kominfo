@@ -71,3 +71,8 @@
         </div>
 
     @endsection
+
+    @push('script')
+        <script src="{{ asset('template/admin') }}/vendors/apexcharts/apexcharts.js"></script>
+        <script src="{{ asset('template/admin') }}/js/pages/dashboard.js"></script>
+    @endpush

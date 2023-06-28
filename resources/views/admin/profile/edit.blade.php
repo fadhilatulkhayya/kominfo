@@ -1,9 +1,10 @@
 @extends('admin')
 @section('title', 'Diskominfo Bone Bolango - Edit Layanan')
-@section('menuLayanan', 'active')
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('template/admin') }}/vendors/summernote/summernote-lite.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.css"
+        integrity="sha512-ZbehZMIlGA8CTIOtdE+M81uj3mrcgyrh6ZFeG33A4FHECakGrOsTPlPQ8ijjLkxgImrdmSVUHn1j+ApjodYZow=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endpush
 
 @section('content')
@@ -48,11 +49,8 @@
     @endsection
 
     @push('script')
-        <script src="{{ asset('template/admin') }}/vendors/summernote/summernote-lite.min.js"></script>
-        <script>
-            $('#body').summernote({
-                tabsize: 2,
-                height: 300,
-            })
-        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.js"
+            integrity="sha512-lVkQNgKabKsM1DA/qbhJRFQU8TuwkLF2vSN3iU/c7+iayKs08Y8GXqfFxxTZr1IcpMovXnf2N/ZZoMgmZep1YQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="{{ asset('template/admin/js/summernote.js') }}"></script>
     @endpush

@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <link href="{{ url('https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css') }}" rel="stylesheet" />
 
     <title>Diskominfo Bone Bolango - @yield('title')</title>
 
@@ -25,8 +26,9 @@
     <link rel="stylesheet" href="{{ asset('template/dashboard') }}/css/fontawesome.css">
     <link rel="stylesheet" href="{{ asset('template/dashboard') }}/css/templatemo-digimedia-v3.css">
     <link rel="stylesheet" href="{{ asset('template/dashboard') }}/css/animated.css">
-    <link rel="stylesheet" href="{{ asset('template/dashboard') }}/css/owl.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -53,27 +55,27 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="" class="logo">
+                        <a href="/" class="logo">
                             <img src="{{ asset('template/dashboard') }}/images/logo-diskominfo1.png" alt="">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="/" class="@yield('menuBeranda')">Beranda</a></li>
+                            <li><a href="{{ route('home') }}" class="@yield('menuBeranda')">Beranda</a></li>
                             <li class="submenu">
-                                <a href="#" class="@yield('menuProfil')">Profil</a>
+                                <a href="#profil" class="@yield('menuProfil')">Profil</a>
                                 <ul>
-                                    <li><a href="/kepala-dinas">Kepala Dinas</a></li>
-                                    <li><a href="/visi-misi">Visi & Misi</a></li>
-                                    <li><a href="/menu-tupoksi">Tugas Pokok & Fungsi</a></li>
-                                    <li><a href="/struktur-organisasi">Struktur Organisasi</a>
-                                    </li>
+                                    @foreach ($profiles as $data)
+                                        <li><a href="{{ route('profil', $data->slug) }}">{{ $data->title }}</a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </li>
-                            <li><a href="/majalah" class="@yield('menuEMagazine')">E-Magazine</a></li>
+                            <li><a href="{{ route('document') }}" class="@yield('menuDocument')">Dokumen</a></li>
+                            <li><a href="{{ route('majalah') }}" class="@yield('menuEMagazine')">E-Magazine</a></li>
                             </li>
-                            <li><a href="/layanan" class="@yield('menuLayanan')">Layanan</a></li>
-                            <li><a href="/berita" class="@yield('menuBerita')">Berita</a></li>
+                            <li><a href="{{ route('layanan') }}" class="@yield('menuLayanan')">Layanan</a></li>
+
                             <li></li>
                         </ul>
                         <a class='menu-trigger'>

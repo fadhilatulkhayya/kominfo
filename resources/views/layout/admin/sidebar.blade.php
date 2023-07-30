@@ -21,33 +21,24 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-
-                <li class="sidebar-item has-sub @yield('menuProfil')">
+                <li class="sidebar-item @yield('menuDocument')">
+                    <a href="{{ route('admin.document.index') }}" class='sidebar-link'>
+                        <i class="bi bi-file-earmark-richtext-fill"></i>
+                        <span>Dokumen</span>
+                    </a>
+                <li class="sidebar-item has-sub {{ request()->is('admin/profile*') ? 'active open' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-person"></i>
                         <span>Profil</span>
                     </a>
                     <ul class="submenu ">
-                        <li class="submenu-item ">
-                            <a href="">Kepala Dinas</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="">Visi & Misi</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="">Tugas Pokok & Fungsi</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="/menu_struktur_organisasi">Struktur Organisasi</a>
-                        </li>
+                        @foreach ($profiles as $data)
+                            <li
+                                class="submenu-item {{ request()->is('admin/profile/' . $data->slug . '') ? 'active' : '' }}">
+                                <a href="{{ route('admin.profile.show', $data->slug) }}">{{ $data->title }}</a>
+                            </li>
+                        @endforeach
                     </ul>
-                </li>
-
-                <li class="sidebar-item @yield('menuMajalah')">
-                    <a href="/menu_majalah" class='sidebar-link'>
-                        <i class="bi bi-file-earmark-richtext-fill"></i>
-                        <span>E-Magazine</span>
-                    </a>
                 </li>
                 <li class="sidebar-item @yield('menuLayanan')">
                     <a href="{{ route('admin.services.index') }}" class='sidebar-link'>
@@ -55,11 +46,25 @@
                         <span>Layanan</span>
                     </a>
                 </li>
-                <li class="sidebar-item @yield('menuBerita')">
-                    <a href="/menu_berita" class='sidebar-link'>
-                        <i class="bi bi-newspaper" width="20"></i>
-                        <span>Berita</span>
+
+                <li class="sidebar-item{{ request()->is('admin/account') ? ' active' : '' }}">
+                    <a class="sidebar-link" href="{{ route('admin.account') }}">
+                        <i class="bi bi-person-circle"></i>
+                        <span> {{ __('Akun') }}</span>
                     </a>
+                </li>
+
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                        <i class="bi bi-door-open-fill"></i>
+                        <span> {{ __('Logout') }}</span>
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
 
             </ul>

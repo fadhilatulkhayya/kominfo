@@ -28,7 +28,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-8">
-                                            <h6 class="text-muted font-semibold">Total Berita Bulan Ini</h6>
+                                            <h6 class="text-muted font-semibold">Jumlah Layanan</h6>
                                             <h6 class="font-extrabold mb-0">112</h6>
                                         </div>
                                     </div>
@@ -41,12 +41,12 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="stats-icon blue">
-                                                <i class="bi bi-file-earmark-richtext-fill"></i>
+                                                <i class="iconly-boldPaper"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-8">
-                                            <h6 class="text-muted font-semibold">E-Magazine</h6>
-                                            <h6 class="font-extrabold mb-0">18</h6>
+                                            <h6 class="text-muted font-semibold">Jumlah E-Magazine</h6>
+                                            <h6 class="font-extrabold mb-0">112</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -71,3 +71,8 @@
         </div>
 
     @endsection
+
+    @push('script')
+        <script src="{{ asset('template/admin') }}/vendors/apexcharts/apexcharts.js"></script>
+        <script src="{{ asset('template/admin') }}/js/pages/dashboard.js"></script>
+    @endpush

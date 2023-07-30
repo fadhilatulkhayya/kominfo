@@ -13,6 +13,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route Home
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/menu-document', [App\Http\Controllers\HomeController::class, 'document'])->name('document');
+Route::get('/menu-majalah', [App\Http\Controllers\HomeController::class, 'majalah'])->name('majalah');
+Route::get('/menu-layanan', [App\Http\Controllers\HomeController::class, 'layanan'])->name('layanan');
+Route::get('/profil/{profile}', [App\Http\Controllers\HomeController::class, 'profile'])->name('profil');
+
+Route::get('/detail-berita/{slug}', [App\Http\Controllers\HomeController::class, 'detailBerita'])->name('detailBerita');
+// Route Home End
+
+
+//Route Admin
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
+
+    // Dashboard
+    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+
+    // Service
+    Route::resource('/services', App\Http\Controllers\Admin\ServiceController::class);
+
+    // Profile
+    Route::resource('/profile', App\Http\Controllers\Admin\ProfileController::class)->except('index', 'create', 'store', 'destroy');
+
+    // Service
+    Route::resource('/services', App\Http\Controllers\Admin\ServiceController::class);
+
+    // Document
+    Route::resource('/document', App\Http\Controllers\Admin\DocumentController::class);
+
+    // Account 
+    Route::get('/account', [\App\Http\Controllers\Admin\AccountController::class, 'index'])->name('account');
 });
+//Route Admin End

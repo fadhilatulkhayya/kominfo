@@ -88,17 +88,17 @@
 
             var target = this.hash,
                 menu = target;
-            var target = $(this.hash);
+            var target_2 = $(this.hash);
             $("html, body")
                 .stop()
                 .animate(
                     {
-                        scrollTop: target.offset().top + 1,
+                        scrollTop: target_2.offset().top + 1,
                     },
                     500,
                     "swing",
                     function () {
-                        window.location.hash = target;
+                        window.location.hash = target_2;
                         $(document).on("scroll", onScroll);
                     }
                 );

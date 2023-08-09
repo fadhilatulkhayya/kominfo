@@ -3,7 +3,7 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="/beranda_admin"><img src="{{ asset('template/dashboard') }}/images/logo-diskominfo1.png"
+                    <a href="/beranda_admin"><img src="{{ asset('template/dashboard') }}/images/logo-diskominfo.png"
                             alt="Logo" srcset=""></a>
                 </div>
                 <div class="toggler">
@@ -13,14 +13,14 @@
         </div>
         <div class="sidebar-menu">
             <ul class="menu">
-                <li class="sidebar-title">Menu</li>
-
                 <li class="sidebar-item @yield('menuDashboard')">
                     <a href="{{ route('admin.dashboard') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
+
+                <li class="sidebar-title">Website</li>
                 <li class="sidebar-item @yield('menuDocument')">
                     <a href="{{ route('admin.document.index') }}" class='sidebar-link'>
                         <i class="bi bi-file-earmark-richtext-fill"></i>
@@ -47,6 +47,7 @@
                     </a>
                 </li>
 
+                <li class="sidebar-title">Akun</li>
                 <li class="sidebar-item{{ request()->is('admin/account') ? ' active' : '' }}">
                     <a class="sidebar-link" href="{{ route('admin.account') }}">
                         <i class="bi bi-person-circle"></i>

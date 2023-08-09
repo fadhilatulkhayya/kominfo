@@ -56,7 +56,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="/" class="logo">
-                            <img src="{{ asset('template/dashboard') }}/images/logo-diskominfo1.png" alt="">
+                            <img src="{{ asset('template/dashboard') }}/images/logo-diskominfo.png" alt="">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
@@ -71,8 +71,7 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            <li><a href="{{ route('document') }}" class="@yield('menuDocument')">Dokumen</a></li>
-                            <li><a href="{{ route('majalah') }}" class="@yield('menuEMagazine')">E-Magazine</a></li>
+                            <li><a href="{{ route('dokumen') }}" class="@yield('menuDocument')">Dokumen</a></li>
                             </li>
                             <li><a href="{{ route('layanan') }}" class="@yield('menuLayanan')">Layanan</a></li>
 

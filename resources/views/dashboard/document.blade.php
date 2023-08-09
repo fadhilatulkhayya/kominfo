@@ -25,11 +25,11 @@
                                                       <tr>
                                                           <th>No</th>
                                                           <th>Nama</th>
-                                                          <th>Download</th>
+                                                          <th>Aksi</th>
                                                       </tr>
                                                   </thead>
                                                   <tbody>
-                                                      @forelse($documents as $document)
+                                                      @foreach ($documents as $document)
                                                           <tr>
                                                               <td>{{ $loop->iteration }}</td>
                                                               <td>{{ $document->name }}</td>
@@ -39,12 +39,7 @@
                                                                       Downloads</a>
                                                               </td>
                                                           </tr>
-                                                      @empty
-                                                          <tr>
-                                                              <td colspan="4" class="text-center">Maaf, belum ada data
-                                                              </td>
-                                                          </tr>
-                                                      @endforelse
+                                                      @endforeach
                                                   </tbody>
                                               </table>
                                           </div>

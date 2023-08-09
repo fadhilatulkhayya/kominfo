@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class KepalaDinas extends Model
+class Magazine extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['sambutan', 'photo'];
+    protected $fillable = ['name', 'cover', 'slug', 'file'];
 }

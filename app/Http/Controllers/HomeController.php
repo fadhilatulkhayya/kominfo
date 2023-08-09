@@ -24,7 +24,7 @@ class HomeController extends Controller
         return view('dashboard.majalah');
     }
 
-    public function document()
+    public function dokumen()
     {
         $documents = Document::latest()->get();
         return view('dashboard.document', compact('documents'));

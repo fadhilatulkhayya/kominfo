@@ -17,7 +17,7 @@
                                   data-wow-delay="1s">
                                   <div class="row">
                                       <div class="col-lg-12">
-                                          <img src="{{ asset('template/dashboard') }}/images/logo-diskominfo.png"
+                                          <img src="{{ asset('template/dashboard') }}/images/kominfo_bonebol.png"
                                               alt="">
                                       </div>
                                   </div>
@@ -60,7 +60,7 @@
                                           <a href="{{ $articles['data'][0]['url'] }}">
                                               <h4>{{ $articles['data'][0]['title'] }}</h4>
                                           </a>
-                                          <p>{{ Str::limit($articles['data'][0]['caption'], 150, '....') }}</p>
+                                          <p>{{ Str::limit($articles['data'][0]['caption'], 80, '....') }}</p>
                                       </div>
                                   </div>
                               </div>
@@ -76,7 +76,7 @@
                                           <a href="{{ $articles['data'][2]['url'] }}">
                                               <h4>{{ $articles['data'][2]['title'] }}</h4>
                                           </a>
-                                          <p>{{ Str::limit($articles['data'][2]['caption'], 150, '....') }}</p>
+                                          <p>{{ Str::limit($articles['data'][2]['caption'], 80, '....') }}</p>
                                       </div>
                                   </div>
                               </div>
@@ -98,7 +98,7 @@
                                           <a href="{{ $articles['data'][1]['url'] }}">
                                               <h4>{{ $articles['data'][1]['title'] }}</h4>
                                           </a>
-                                          <p>{{ Str::limit($articles['data'][1]['caption'], 150, '....') }}</p>
+                                          <p>{{ Str::limit($articles['data'][1]['caption'], 80, '....') }}</p>
                                       </div>
                                   </div>
                               </div>
@@ -114,7 +114,7 @@
                                           <a href="{{ $articles['data'][3]['url'] }}">
                                               <h4>{{ $articles['data'][3]['title'] }}</h4>
                                           </a>
-                                          <p>{{ Str::limit($articles['data'][3]['caption'], 150, '....') }}</p>
+                                          <p>{{ Str::limit($articles['data'][3]['caption'], 80, '....') }}</p>
                                       </div>
                                   </div>
                               </div>

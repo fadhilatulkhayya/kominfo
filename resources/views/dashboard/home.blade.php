@@ -296,7 +296,7 @@
                   </div>
               </div>
           </div>
-          <div class="container-fluid wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+          <div class="container wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
               <div class="row">
                   <div class="col-lg-12">
                       <div class="loop owl-carousel">

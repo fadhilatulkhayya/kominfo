@@ -46,6 +46,12 @@
                         <span>Layanan</span>
                     </a>
                 </li>
+                <li class="sidebar-item @yield('menuLokasi')">
+                    <a href="{{ route('admin.location.index') }}" class='sidebar-link'>
+                        <i class="bi bi-geo-alt" width="20"></i>
+                        <span>Lokasi</span>
+                    </a>
+                </li>
 
                 <li class="sidebar-title">Akun</li>
                 <li class="sidebar-item{{ request()->is('admin/account') ? ' active' : '' }}">

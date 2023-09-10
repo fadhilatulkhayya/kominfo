@@ -17,7 +17,6 @@
                         </div>
                         <div class="col-lg-5">
                             <div id="map">
-                                {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d821.7428144626006!2d123.14586857839767!3d0.5566138340711226!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x327ed46cda596ebd%3A0x77dce7688fbca67b!2sDinas%20Komunikasi%20dan%20Informatika%20Kabupaten%20Bone%20Bolango!5e0!3m2!1sen!2sid!4v1677577070465!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d821.7428144626006!2d123.14586857839767!3d0.5566138340711226!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x327ed46cda596ebd%3A0x77dce7688fbca67b!2sDinas%20Komunikasi%20dan%20Informatika%20Kabupaten%20Bone%20Bolango!5e0!3m2!1sen!2sid!4v1677577070465!5m2!1sen!2sid"
                                     width="100%" height="636px" frameborder="0" style="border:0"
@@ -61,7 +60,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright © 2023 Dinas Kominfo Statistik dan Persandian Kabupaten Bone Bolango
+                <p>Copyright © 2023 Dinas Kominfo Kabupaten Bone Bolango
                 </p>
             </div>
         </div>
@@ -70,7 +69,6 @@
 
 
 <!-- Scripts -->
-{{-- <script src="{{ asset('template/dashboard') }}/vendor/jquery/jquery.min.js"></script> --}}
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <script src="{{ asset('template/dashboard') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

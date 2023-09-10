@@ -42,6 +42,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     // Document
     Route::resource('/document', App\Http\Controllers\Admin\DocumentController::class);
 
+    // Location
+    Route::resource('/location', App\Http\Controllers\Admin\LocationController::class);
+
     // Account 
     Route::get('/account', [\App\Http\Controllers\Admin\AccountController::class, 'index'])->name('account');
 });

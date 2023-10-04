@@ -17,8 +17,8 @@
                                   data-wow-delay="1s">
                                   <div class="row">
                                       <div class="col-lg-12">
-                                          <img src="{{ asset('template/dashboard') }}/images/kominfo_bonebol.png"
-                                              alt="">
+                                          <img src="{{ asset('template/dashboard') }}/images/home.png" alt="home"
+                                              style="margin-top: -100px;">
                                       </div>
                                   </div>
                               </div>

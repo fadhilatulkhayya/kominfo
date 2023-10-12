@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Document;
 use App\Models\Profile;
-use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -51,30 +50,29 @@ class HomeController extends Controller
 
     private function apiAllArticle()
     {
-        $client = new Client();
         $url = "https://berita.bonebolangokab.go.id/api/article";
 
+        $response = Http::get($url);
 
-        $response = $client->request('GET', $url, [
-            'verify'  => false,
-        ]);
-
-        $responseBody = json_decode($response->getBody(), true);
-
-        return $responseBody;
+        if ($response->successful()) {
+            $data = $response->json();
+            return $data;
+        } else {
+            return response()->json(['message' => 'Gagal mengambil data dari API'], 500);
+        }
     }
 
     private function apiDetailArticle($slug)
     {
-        $client = new Client();
         $url = "https://berita.bonebolangokab.go.id/api/article/$slug";
 
-        $response = $client->request('GET', $url, [
-            'verify'  => false,
-        ]);
+        $response = Http::get($url);
 
-        $responseBody = json_decode($response->getBody(), true);
-
-        return $responseBody;
+        if ($response->successful()) {
+            $data = $response->json();
+            return $data;
+        } else {
+            return response()->json(['message' => 'Gagal mengambil data dari API'], 500);
+        }
     }
 }

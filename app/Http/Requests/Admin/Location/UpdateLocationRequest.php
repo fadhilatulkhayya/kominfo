@@ -23,7 +23,7 @@ class UpdateLocationRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:255',
-            'category' => 'required|in:1,2,3,4,5',
+            'category' => 'required|in:1,2,3,4,5,6',
             'latitude' => 'required|numeric',
             'longitude' => 'required|numeric',
             'explanation' => 'nullable|min:3|max:255',

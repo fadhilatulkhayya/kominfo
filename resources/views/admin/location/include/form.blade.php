@@ -25,7 +25,10 @@
                 Videotron</option>
             <option value="5"
                 {{ isset($location) && $location->category == '5' ? 'selected' : (old('category') == '5' ? 'selected' : '') }}>
-                Tiang Internet</option>
+                Jaringan Intra</option>
+            <option value="6"
+                {{ isset($location) && $location->category == '6' ? 'selected' : (old('category') == '6' ? 'selected' : '') }}>
+                Tower</option>
         </select>
         @error('category')
             <div class="invalid-feedback">{{ $message }}</div>

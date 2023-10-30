@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\Location\StoreLocationRequest;
 use App\Http\Requests\Admin\Location\UpdateLocationRequest;
 use App\Models\Location;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class LocationController extends Controller
 {
@@ -15,8 +16,19 @@ class LocationController extends Controller
      */
     public function index()
     {
-        $locations = Location::latest()->get();
-        return view('admin.location.index', compact('locations'));
+        if (request()->ajax()) {
+            $locations = Location::latest();
+
+            return DataTables::of($locations)
+                ->addIndexColumn()
+                ->addColumn('category', function ($row) {
+                    return $row->category ? $row->category() : '-';
+                })
+                ->addColumn('action', 'admin.location.include.action')
+                ->toJson();
+        }
+
+        return view('admin.location.index');
     }
 
     /**

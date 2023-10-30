@@ -2,6 +2,10 @@
 @section('title', 'Diskominfo Bone Bolango - Lokasi')
 @section('menuLokasi', 'active')
 
+@push('style')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+@endpush
+
 @section('content')
     <div id="main">
         <header class="mb-3">
@@ -35,22 +39,6 @@
                                                 <th>Opsi</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            @forelse($locations as $location)
-                                                <tr>
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $location->name }}</td>
-                                                    <td>{{ $location->category() }}</td>
-                                                    <td>{{ $location->longitude }}</td>
-                                                    <td>{{ $location->latitude }}</td>
-                                                    <td>@include('admin.location.include.action')</td>
-                                                </tr>
-                                            @empty
-                                                <tr>
-                                                    <td colspan="6" class="text-center">Maaf, belum ada data</td>
-                                                </tr>
-                                            @endforelse
-                                        </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -61,3 +49,40 @@
             </section>
         </div>
     @endsection
+
+    @push('script')
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+        <script>
+            $('#table1').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('admin.location.index') }}",
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex',
+                        orderable: false,
+                        searchable: false,
+                    },
+                    {
+                        data: 'name',
+                    },
+                    {
+                        data: 'category',
+                    },
+                    {
+                        data: 'longitude',
+                    },
+                    {
+                        data: 'latitude',
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: false,
+                        searchable: false
+                    }
+                ],
+            });
+        </script>
+    @endpush

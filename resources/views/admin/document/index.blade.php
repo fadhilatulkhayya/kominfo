@@ -2,6 +2,10 @@
 @section('title', 'Diskominfo Bone Bolango - Dokumen')
 @section('menuDocument', 'active')
 
+@push('style')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+@endpush
+
 @section('content')
     <div id="main">
         <header class="mb-3">
@@ -28,28 +32,10 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Nama</th>
-                                                <th>File</th>
+                                                <th>Nama Dokumen</th>
                                                 <th>Opsi</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            @forelse($documents as $document)
-                                                <tr>
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $document->name }}</td>
-                                                    <td><a href="{{ url('storage/upload/document/' . $document->file) }}"
-                                                            target="_blank">{{ $document->name }}</a>
-                                                    </td>
-                                                    <td>{{ $document->name }}</td>
-                                                    <td>@include('admin.document.include.action')</td>
-                                                </tr>
-                                            @empty
-                                                <tr>
-                                                    <td colspan="4" class="text-center">Maaf, belum ada data</td>
-                                                </tr>
-                                            @endforelse
-                                        </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -60,3 +46,31 @@
             </section>
         </div>
     @endsection
+
+    @push('script')
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+        <script>
+            $('#table1').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('admin.document.index') }}",
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex',
+                        orderable: false,
+                        searchable: false,
+                    },
+                    {
+                        data: 'name',
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: false,
+                        searchable: false
+                    }
+                ],
+            });
+        </script>
+    @endpush

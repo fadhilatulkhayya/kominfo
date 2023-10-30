@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\Service\StoreServiceRequest;
 use App\Http\Requests\Admin\Service\UpdateServiceRequest;
 use App\Models\Service;
 use Intervention\Image\Facades\Image;
+use Yajra\DataTables\Facades\DataTables;
 
 class ServiceController extends Controller
 {
@@ -15,8 +16,16 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::latest()->get();
-        return view('admin.service.index', compact('services'));
+        if (request()->ajax()) {
+            $services = Service::latest();
+
+            return DataTables::of($services)
+                ->addIndexColumn()
+                ->addColumn('action', 'admin.service.include.action')
+                ->toJson();
+        }
+
+        return view('admin.service.index');
     }
 
     /**

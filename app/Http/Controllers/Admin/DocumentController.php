@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Document\StoreDocumentRequest;
 use App\Http\Requests\Admin\Document\UpdateDocumentRequest;
 use App\Models\Document;
+use Yajra\DataTables\Facades\DataTables;
 
 class DocumentController extends Controller
 {
@@ -14,8 +15,16 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        $documents = Document::latest()->get();
-        return view('admin.document.index', compact('documents'));
+        if (request()->ajax()) {
+            $documents = Document::latest();
+
+            return DataTables::of($documents)
+                ->addIndexColumn()
+                ->addColumn('action', 'admin.document.include.action')
+                ->toJson();
+        }
+
+        return view('admin.document.index');
     }
 
     /**

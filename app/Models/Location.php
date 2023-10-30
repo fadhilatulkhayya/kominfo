@@ -22,9 +22,11 @@ class Location extends Model
         } elseif ($this->category == 4) {
             return 'Videotron';
         } elseif ($this->category == 5) {
-            return 'Tiang Internet';
+            return 'Jaringan Intra';
+        } elseif ($this->category == 6) {
+            return 'Tower';
         } else {
-            return 'Tidak ada';
+            return 'Tidak Ada';
         }
     }
 }

@@ -28,31 +28,11 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Thumbnail</th>
-                                                <th>URL</th>
                                                 <th>Nama</th>
+                                                <th>URL</th>
                                                 <th>Opsi</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            @forelse($services as $service)
-                                                <tr>
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td><img src="{{ asset('storage/upload/layanan/' . $service->thumbnail) }}"
-                                                            class="img-thumbnail" width="200" height="150"
-                                                            style="object-fit: cover" /></td>
-                                                    </td>
-                                                    <td><a href="https://{{ $service->url }}"
-                                                            target="_blank">{{ $service->url }}</a></td>
-                                                    <td>{{ $service->name }}</td>
-                                                    <td>@include('admin.service.include.action')</td>
-                                                </tr>
-                                            @empty
-                                                <tr>
-                                                    <td colspan="5" class="text-center">Maaf, belum ada data</td>
-                                                </tr>
-                                            @endforelse
-                                        </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -63,3 +43,34 @@
             </section>
         </div>
     @endsection
+
+    @push('script')
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+        <script>
+            $('#table1').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('admin.services.index') }}",
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex',
+                        orderable: false,
+                        searchable: false,
+                    },
+                    {
+                        data: 'name',
+                    },
+                    {
+                        data: 'url',
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: false,
+                        searchable: false
+                    }
+                ],
+            });
+        </script>
+    @endpush

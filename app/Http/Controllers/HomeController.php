@@ -15,7 +15,12 @@ class HomeController extends Controller
 
         $articles = $this->apiAllArticle();
 
-        return view('dashboard.home', compact('services', 'articles'));
+        $categoryArticle = [];
+        foreach ($articles as $article) {
+            $categoryArticle[] = $this->apiCategoryArticle($article['categories'][0]);
+        }
+
+        return view('dashboard.home', compact('services', 'articles', 'categoryArticle'));
     }
 
     public function majalah()
@@ -50,7 +55,21 @@ class HomeController extends Controller
 
     private function apiAllArticle()
     {
-        $url = "https://berita.bonebolangokab.go.id/api/article";
+        $url = "https://berita.bonebolangokab.go.id/wp-json/wp/v2/posts";
+
+        $response = Http::get($url);
+
+        if ($response->successful()) {
+            $data = $response->json();
+            return $data;
+        } else {
+            return response()->json(['message' => 'Gagal mengambil data dari API'], 500);
+        }
+    }
+
+    private function apiCategoryArticle($id)
+    {
+        $url = "https://berita.bonebolangokab.go.id/wp-json/wp/v2/categories/$id";
 
         $response = Http::get($url);
 

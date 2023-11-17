@@ -51,32 +51,38 @@
                               <div class="col-lg-12">
                                   <div class="post-item">
                                       <div class="thumb">
-                                          <a href="{{ $articles['data'][0]['url'] }}"><img
-                                                  src="{{ $articles['data'][0]['thumbnail'] }}" alt=""></a>
+                                          <a href="{{ $articles[0]['link'] }}"><img
+                                                  src="{{ $articles[0]['yoast_head_json']['og_image'][0]['url'] }}"
+                                                  alt=""></a>
                                       </div>
                                       <div class="right-content">
-                                          <span class="category">{{ $articles['data'][0]['category'] }}</span>
-                                          <span class="date">{{ $articles['data'][0]['published_at'] }}</span>
-                                          <a href="{{ $articles['data'][0]['url'] }}">
-                                              <h4>{{ $articles['data'][0]['title'] }}</h4>
+                                          <span class="category">{{ $categoryArticle[0]['name'] }}</span>
+                                          <span
+                                              class="date">{{ Carbon\Carbon::parse($articles[0]['date'])->format('F d Y') }}</span>
+                                          <a href="{{ $articles[0]['link'] }}">
+                                              <h4>{{ $articles[0]['title']['rendered'] }}</h4>
                                           </a>
-                                          <p>{{ Str::limit($articles['data'][0]['caption'], 80, '....') }}</p>
+                                          <p>{!! Str::limit($articles[0]['excerpt']['rendered'], 60, '...') !!}
+                                          </p>
                                       </div>
                                   </div>
                               </div>
                               <div class="col-lg-12">
                                   <div class="post-item">
                                       <div class="thumb">
-                                          <a href="{{ $articles['data'][2]['url'] }}"><img
-                                                  src="{{ $articles['data'][2]['thumbnail'] }}" alt=""></a>
+                                          <a href="{{ $articles[2]['link'] }}"><img
+                                                  src="{{ $articles[2]['yoast_head_json']['og_image'][0]['url'] }}"
+                                                  alt=""></a>
                                       </div>
                                       <div class="right-content">
-                                          <span class="category">{{ $articles['data'][2]['category'] }}</span>
-                                          <span class="date">{{ $articles['data'][2]['published_at'] }}</span>
-                                          <a href="{{ $articles['data'][2]['url'] }}">
-                                              <h4>{{ $articles['data'][2]['title'] }}</h4>
+                                          <span class="category">{{ $categoryArticle[2]['name'] }}</span>
+                                          <span
+                                              class="date">{{ Carbon\Carbon::parse($articles[2]['date'])->format('F d Y') }}</span>
+                                          <a href="{{ $articles[2]['link'] }}">
+                                              <h4>{{ $articles[2]['title']['rendered'] }}</h4>
                                           </a>
-                                          <p>{{ Str::limit($articles['data'][2]['caption'], 80, '....') }}</p>
+                                          <p>{!! Str::limit($articles[2]['excerpt']['rendered'], 60, '...') !!}
+                                          </p>
                                       </div>
                                   </div>
                               </div>
@@ -89,32 +95,38 @@
                               <div class="col-lg-12">
                                   <div class="post-item">
                                       <div class="thumb">
-                                          <a href="{{ $articles['data'][1]['url'] }}"><img
-                                                  src="{{ $articles['data'][1]['thumbnail'] }}" alt=""></a>
+                                          <a href="{{ $articles[1]['link'] }}"><img
+                                                  src="{{ $articles[1]['yoast_head_json']['og_image'][0]['url'] }}"
+                                                  alt=""></a>
                                       </div>
                                       <div class="right-content">
-                                          <span class="category">{{ $articles['data'][1]['category'] }}</span>
-                                          <span class="date">{{ $articles['data'][1]['published_at'] }}</span>
-                                          <a href="{{ $articles['data'][1]['url'] }}">
-                                              <h4>{{ $articles['data'][1]['title'] }}</h4>
+                                          <span class="category">{{ $categoryArticle[1]['name'] }}</span>
+                                          <span
+                                              class="date">{{ Carbon\Carbon::parse($articles[1]['date'])->format('F d Y') }}</span>
+                                          <a href="{{ $articles[1]['link'] }}">
+                                              <h4>{{ $articles[1]['title']['rendered'] }}</h4>
                                           </a>
-                                          <p>{{ Str::limit($articles['data'][1]['caption'], 80, '....') }}</p>
+                                          <p>{!! Str::limit($articles[1]['excerpt']['rendered'], 60, '...') !!}
+                                          </p>
                                       </div>
                                   </div>
                               </div>
                               <div class="col-lg-12">
                                   <div class="post-item">
                                       <div class="thumb">
-                                          <a href="{{ $articles['data'][3]['url'] }}"><img
-                                                  src="{{ $articles['data'][3]['thumbnail'] }}" alt=""></a>
+                                          <a href="{{ $articles[3]['link'] }}"><img
+                                                  src="{{ $articles[3]['yoast_head_json']['og_image'][0]['url'] }}"
+                                                  alt=""></a>
                                       </div>
                                       <div class="right-content">
-                                          <span class="category">{{ $articles['data'][3]['category'] }}</span>
-                                          <span class="date">{{ $articles['data'][3]['published_at'] }}</span>
-                                          <a href="{{ $articles['data'][3]['url'] }}">
-                                              <h4>{{ $articles['data'][3]['title'] }}</h4>
+                                          <span class="category">{{ $categoryArticle[3]['name'] }}</span>
+                                          <span
+                                              class="date">{{ Carbon\Carbon::parse($articles[3]['date'])->format('F d Y') }}</span>
+                                          <a href="{{ $articles[3]['link'] }}">
+                                              <h4>{{ $articles[3]['title']['rendered'] }}</h4>
                                           </a>
-                                          <p>{{ Str::limit($articles['data'][3]['caption'], 80, '....') }}</p>
+                                          <p>{!! Str::limit($articles[3]['excerpt']['rendered'], 60, '...') !!}
+                                          </p>
                                       </div>
                                   </div>
                               </div>

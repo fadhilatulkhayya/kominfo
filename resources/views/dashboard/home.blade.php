@@ -18,7 +18,7 @@
                                   <div class="row">
                                       <div class="col-lg-12">
                                           <img src="{{ asset('template/dashboard') }}/images/home.png" alt="home"
-                                              style="margin-top: -100px;">
+                                              style="margin-top: -100px;width:50%;" class="d-block mx-auto">
                                       </div>
                                   </div>
                               </div>

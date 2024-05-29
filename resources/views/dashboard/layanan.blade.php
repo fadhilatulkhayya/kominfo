@@ -55,7 +55,7 @@
                                                   <span class="icon"><img
                                                           src="{{ asset('template/dashboard') }}/images/service-icon-01.png"
                                                           alt=""></span>
-                                                  Web Development
+                                                  PlayGround
                                               </div>
                                           </div>
                                           <div>
@@ -63,7 +63,7 @@
                                                   <span class="icon"><img
                                                           src="{{ asset('template/dashboard') }}/images/service-icon-02.png"
                                                           alt=""></span>
-                                                  Network & CCTV
+                                                  VR Simulation
                                               </div>
                                           </div>
                                           <div>
@@ -71,7 +71,7 @@
                                                   <span class="icon"><img
                                                           src="{{ asset('template/dashboard') }}/images/service-icon-03.png"
                                                           alt=""></span>
-                                                  Informasi Publik
+                                                  RainbowSlide
                                               </div>
                                           </div>
                                       </div>
@@ -84,27 +84,26 @@
                                                       <div class="row">
                                                           <div class="col-lg-6 align-self-center">
                                                               <div class="left-text">
-                                                                  <h4>Web Development</h4>
-                                                                  <p>Web development adalah proses membuat dan memelihara
-                                                                      situs web. Hal ini melibatkan penggunaan bahasa
-                                                                      pemrograman dan teknologi web untuk membuat halaman
-                                                                      web yang dapat diakses melalui internet.</p>
+                                                                  <h4>PLAYGROUND</h4>
+                                                                  <p> playground dirancang dengan mempertimbangkan aspek keamanan untuk mencegah cedera saat bermain.
+                                                                    Material yang digunakan biasanya ramah anak dan lantainya sering kali dilapisi dengan bahan yang empuk untuk mengurangi risiko cedera saat jatuh.
+                                                                    Playground tidak hanya menyediakan sarana untuk bermain tetapi juga menjadi tempat anak-anak belajar berinteraksi, berbagi, dan bekerja sama dengan teman sebaya.
+                                                                    Ini adalah lingkungan yang mendukung perkembangan fisik, emosional, dan sosial anak-anak melalui permainan yang menyenangkan dan edukatif.</p>
                                                                   <div class="ticks-list"><span><i class="fa fa-check"></i>
-                                                                          Perencanaan</span>
+                                                                          Ayunan</span>
                                                                       <span><i class="fa fa-check"></i>
-                                                                          Desain</span> <span><i class="fa fa-check"></i>
-                                                                          Pengembangan</span>
-                                                                      <span><i class="fa fa-check"></i> Uji Coba dan
-                                                                          Debugging</span>
-                                                                      <span><i class="fa fa-check"></i> Peluncuran</span>
-                                                                      <span><i class="fa fa-check"></i> Pemeliharaan</span>
+                                                                          Perosotan</span> <span><i class="fa fa-check"></i>
+                                                                          Climbing Structures</span>
+                                                                      <span><i class="fa fa-check"></i> Kotak Pasir</span>
+                                                                      <span><i class="fa fa-check"></i> Rumah Pohon Mini</span>
+                                                                      <span><i class="fa fa-check"></i> car City</span>
                                                                   </div>
 
                                                               </div>
                                                           </div>
                                                           <div class="col-lg-6 align-self-center">
                                                               <div class="right-image">
-                                                                  <img src="{{ asset('template/dashboard') }}/images/services-image.jpg"
+                                                                <img src="{{ asset('img/playground.jpg')}}" alt="">
                                                                       alt="">
                                                               </div>
                                                           </div>
@@ -118,27 +117,24 @@
                                                       <div class="row">
                                                           <div class="col-lg-6 align-self-center">
                                                               <div class="left-text">
-                                                                  <h4>NETWORK & CCTV ENGINEER</h4>
-                                                                  <p>CCTV (Closed Circuit Television) dan Networking
-                                                                      Engineering adalah dua teknologi yang berkaitan erat
-                                                                      dengan keamanan dan pemantauan, yang memiliki peran
-                                                                      penting di era digital saat ini. CCTV digunakan untuk
-                                                                      merekam gambar dan suara di suatu tempat atau lokasi
-                                                                      tertentu, sedangkan Networking Engineering bertanggung
-                                                                      jawab untuk mengelola jaringan komputer dan sistem
-                                                                      informasi.</p>
+                                                                  <h4>VR SIMULATION</h4>
+                                                                  <p>VR Simulation merupakan sebuah teknologi yang menciptakan pengalaman interaktif
+                                                                    dan impresif bagi pengguna di dalam lingkungan simulasi. dalam dunia virtual
+                                                                    yang diciptakan, pengguna dapat merasakan dan ber-interaksi dengan objek-objek
+                                                                    serta lingkungan 3D yang terlihat dan terdengar seperti dunia nyata.
+                                                                  </p>
                                                                   <div class="ticks-list"><span><i class="fa fa-check"></i>
-                                                                          Pemasangan</span>
+                                                                          Dungeons of Eternity</span>
                                                                       <span><i class="fa fa-check"></i>
-                                                                          Pemantauan</span> <span><i
-                                                                              class="fa fa-check"></i> Pemeliharaan</span>
-                                                                      <span><i class="fa fa-check"></i> Wifi Publik</span>
+                                                                          Arizona Sunshine</span> <span><i
+                                                                              class="fa fa-check"></i> Asgard's Wrath</span>
+                                                                      <span><i class="fa fa-check"></i> Assasin's Creed Nexus</span>
                                                                   </div>
                                                               </div>
                                                           </div>
                                                           <div class="col-lg-6 align-self-center">
                                                               <div class="right-image">
-                                                                  <img src="{{ asset('template/dashboard') }}/images/services-image-02.jpg"
+                                                                <img src="{{ asset('img/vr.jpg')}}" alt="">
                                                                       alt="">
                                                               </div>
                                                           </div>
@@ -152,32 +148,16 @@
                                                       <div class="row">
                                                           <div class="col-lg-6 align-self-center">
                                                               <div class="left-text">
-                                                                  <h4>Informasi Publik</h4>
-                                                                  <p>Informasi publik adalah informasi yang dapat diakses
-                                                                      dan digunakan oleh masyarakat secara umum. Informasi
-                                                                      publik ini biasanya disediakan oleh pemerintah,
-                                                                      lembaga publik, dan organisasi lainnya yang
-                                                                      berhubungan dengan kepentingan umum. Dalam banyak
-                                                                      negara, hak akses terhadap informasi publik dijamin
-                                                                      oleh undang-undang, sehingga memungkinkan masyarakat
-                                                                      untuk memperoleh informasi yang diperlukan</p>
-                                                                  <div class="ticks-list"><span><i class="fa fa-check"></i>
-                                                                          Berita Daerah</span>
-                                                                      <span><i class="fa fa-check"></i> Berita
-                                                                          Pemerintahan</span><span><i
-                                                                              class="fa fa-check"></i>
-                                                                          Data Statistik</span> <span><i
-                                                                              class="fa fa-check"></i> Laporan
-                                                                          Keuangan</span>
-                                                                      <span><i class="fa fa-check"></i> Kebijakan
-                                                                          Publik</span>
-
+                                                                  <h4>RAINBOWSLIDE</h4>
+                                                                  <p>Rainbowslide adalah perosotan terbesar yang ada di indramayu
+                                                                    dengan ketinggian 10 meter dan panjang 25 meter dengan alas berwarna-warni
+                                                                  </p>
                                                                   </div>
                                                               </div>
                                                           </div>
                                                           <div class="col-lg-6 align-self-center">
                                                               <div class="right-image">
-                                                                  <img src="{{ asset('template/dashboard') }}/images/services-image-03.jpg"
+                                                                <img src="{{ asset('img/rainbow.jpg')}}" alt="">
                                                                       alt="">
                                                               </div>
                                                           </div>

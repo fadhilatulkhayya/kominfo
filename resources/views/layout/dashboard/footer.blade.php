@@ -18,30 +18,26 @@
                         <div class="col-lg-5">
                             <div id="map">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d821.7428144626006!2d123.14586857839767!3d0.5566138340711226!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x327ed46cda596ebd%3A0x77dce7688fbca67b!2sDinas%20Komunikasi%20dan%20Informatika%20Kabupaten%20Bone%20Bolango!5e0!3m2!1sen!2sid!4v1677577070465!5m2!1sen!2sid"
-                                    width="100%" height="636px" frameborder="0" style="border:0"
-                                    allowfullscreen></iframe>
+                                    src="https://www.google.com/maps/place/KidsPark+Indramayu/@-6.3302368,108.3215421,17z/data=!4m14!1m7!3m6!1s0x2e6eb9003b51567f:0xd38db8e06972c5d0!2sKidsPark+Indramayu!8m2!3d-6.3302422!4d108.3261555!16s%2Fg%2F11lchbk_dn!3m5!1s0x2e6eb9003b51567f:0xd38db8e06972c5d0!8m2!3d-6.3302422!4d108.3261555!16s%2Fg%2F11lchbk_dn?entry=ttu"
+                                    width="100%" height="636px" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
                         </div>
                         <div class="col-lg-7">
                             <div class="fill-form">
                                 <div class="row">
-
                                     <div class="col-lg-6">
                                         <div class="info-post">
                                             <div class="icon">
-                                                <img src="{{ asset('template/dashboard') }}/images/email-icon.png"
-                                                    alt="">
-                                                <a href="#">kominfo@bonebolangokab.go.id</a>
+                                                <img src="{{ asset('template/dashboard') }}/images/email-icon.png" alt="">
+                                                <a href="mailto:kidsparkindramayu@gmail.com">kidspark.indramayu</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="info-post">
                                             <div class="icon">
-                                                <img src="{{ asset('template/dashboard') }}/images/location-icon.png"
-                                                    alt="">
-                                                <a href="#">Bone Bolango</a>
+                                                <img src="{{ asset('template/dashboard') }}/images/location-icon.png" alt="">
+                                                <a href="#">KidsPark</a>
                                             </div>
                                         </div>
                                     </div>
@@ -60,21 +56,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright © 2023 Dinas Kominfo Kabupaten Bone Bolango
-                </p>
+                <p>Hak Cipta © 2023 KidsPark Indramayu</p>
             </div>
         </div>
     </div>
 </footer>
 
-
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"
-    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<!-- Skrip -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <script src="{{ asset('template/dashboard') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{ asset('template/dashboard') }}/js/animation.js"></script>
 <script src="{{ asset('template/dashboard') }}/js/imagesloaded.js"></script>
 <script src="{{ asset('template/dashboard') }}/js/custom.js"></script>

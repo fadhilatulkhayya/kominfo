@@ -25,8 +25,8 @@
                           </div>
                           <div class="col-lg-6">
                               <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                                  <h6>Pemerintah Kabupaten Bone Bolango</h6>
-                                  <h2> DINAS KOMUNIKASI & INFORMATIKA</h2>
+                                  <h6>Destinasi Liburan Akhir Pekan</h6>
+                                  <h2> KidsPark Indramayu</h2>
                               </div>
                           </div>
                       </div>
@@ -41,7 +41,7 @@
                   <div class="col-lg-4 offset-lg-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
                       <div class="section-heading">
                           <h6>Informasi</h6>
-                          <h4>Informasi Publik</h4>
+                          <h4>Informasi Wahana</h4>
                           <div class="line-dec"></div>
                       </div>
                   </div>

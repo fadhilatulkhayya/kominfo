@@ -13,7 +13,7 @@
         rel="stylesheet">
     <link href="{{ url('https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css') }}" rel="stylesheet" />
 
-    <title>Diskominfo Bone Bolango - @yield('title')</title>
+    <title>KidsPark Indramayu - @yield('title')</title>
 
     <link rel="shortcut icon" href="{{ asset('template/dashboard') }}/images/logo-icon.png" type="image/x-icon" />
     <link rel="shortcut icon" href="{{ asset('template/dashboard') }}/images/logo-icon.png" type="image/png" />
@@ -56,14 +56,14 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="/" class="logo">
-                            <img src="{{ asset('template/dashboard') }}/images/logo-diskominfo.png" alt="">
+                            <img src="{{ asset('img/logo.png')}}" alt="">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li><a href="{{ route('home') }}" class="@yield('menuBeranda')">Beranda</a></li>
                             <li class="submenu">
-                                <a href="#profil" class="@yield('menuProfil')">Profil</a>
+                                <a href="#profil" class="@yield('menuProfil')">Tiket & Reservasi</a>
                                 <ul>
                                     @foreach ($profiles as $data)
                                         <li><a href="{{ route('profil', $data->slug) }}">{{ $data->title }}</a>
@@ -71,9 +71,9 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            <li><a href="{{ route('dokumen') }}" class="@yield('menuDocument')">Dokumen</a></li>
+                            <li><a href="{{ route('dokumen') }}" class="@yield('menuDocument')">Jelajahi KidsPark</a></li>
                             </li>
-                            <li><a href="{{ route('layanan') }}" class="@yield('menuLayanan')">Layanan</a></li>
+                            <li><a href="{{ route('layanan') }}" class="@yield('menuLayanan')">Kontak</a></li>
 
                             <li></li>
                         </ul>

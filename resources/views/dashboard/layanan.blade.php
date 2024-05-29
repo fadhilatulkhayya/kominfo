@@ -85,7 +85,7 @@
                                                           <div class="col-lg-6 align-self-center">
                                                               <div class="left-text">
                                                                   <h4>PLAYGROUND</h4>
-                                                                  <p> playground dirancang dengan mempertimbangkan aspek keamanan untuk mencegah cedera saat bermain.
+                                                                  <p>Playground dirancang dengan mempertimbangkan aspek keamanan untuk mencegah cedera saat bermain.
                                                                     Material yang digunakan biasanya ramah anak dan lantainya sering kali dilapisi dengan bahan yang empuk untuk mengurangi risiko cedera saat jatuh.
                                                                     Playground tidak hanya menyediakan sarana untuk bermain tetapi juga menjadi tempat anak-anak belajar berinteraksi, berbagi, dan bekerja sama dengan teman sebaya.
                                                                     Ini adalah lingkungan yang mendukung perkembangan fisik, emosional, dan sosial anak-anak melalui permainan yang menyenangkan dan edukatif.</p>

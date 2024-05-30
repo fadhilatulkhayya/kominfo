@@ -15,8 +15,8 @@
 
     <title>KidsPark Indramayu - @yield('title')</title>
 
-    <link rel="shortcut icon" href="{{ asset('template/dashboard') }}/images/logo-icon.png" type="image/x-icon" />
-    <link rel="shortcut icon" href="{{ asset('template/dashboard') }}/images/logo-icon.png" type="image/png" />
+    <link rel="shortcut icon" href="{{ asset('img/logo.png')}}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('img/logo.png')}}" type="img/png" />
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('template/dashboard') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

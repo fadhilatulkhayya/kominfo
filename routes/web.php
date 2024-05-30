@@ -40,7 +40,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
     Route::resource('/services', App\Http\Controllers\Admin\ServiceController::class);
 
     // Document
-    Route::resource('/document', App\Http\Controllers\Admin\DocumentController::class);
+    Route::resource('/wahana', App\Http\Controllers\Admin\DocumentController::class);
 
     // Location
     Route::resource('/location', App\Http\Controllers\Admin\LocationController::class);

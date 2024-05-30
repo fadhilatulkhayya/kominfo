@@ -17,11 +17,11 @@
                         </div>
                         <div class="col-lg-5">
                             <div id="map">
-                                <iframe
-                                    src="https://www.google.com/maps/place/KidsPark+Indramayu/@-6.3302368,108.3215421,17z/data=!4m14!1m7!3m6!1s0x2e6eb9003b51567f:0xd38db8e06972c5d0!2sKidsPark+Indramayu!8m2!3d-6.3302422!4d108.3261555!16s%2Fg%2F11lchbk_dn!3m5!1s0x2e6eb9003b51567f:0xd38db8e06972c5d0!8m2!3d-6.3302422!4d108.3261555!16s%2Fg%2F11lchbk_dn?entry=ttu"
-                                    width="100%" height="636px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.4920256065298!2d108.32358057409786!3d-6.330236861937802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6eb9003b51567f%3A0xd38db8e06972c5d0!2sKidsPark%20Indramayu!5e0!3m2!1sid!2sid!4v1717012703821!5m2!1sid!2sid"
+                                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
+
                         <div class="col-lg-7">
                             <div class="fill-form">
                                 <div class="row">

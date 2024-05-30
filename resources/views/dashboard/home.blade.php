@@ -17,7 +17,7 @@
                                   data-wow-delay="1s">
                                   <div class="row">
                                       <div class="col-lg-12">
-                                          <img src="{{ asset('template/dashboard') }}/images/home.webp" alt="home"
+                                        <img src="{{ asset('img/logo.png')}}" alt=""
                                               style="margin-top: -100px;width:50%;" class="d-block mx-auto">
                                       </div>
                                   </div>
@@ -34,7 +34,7 @@
               </div>
           </div>
       </div>
-
+{{--
       <div id="blog" class="blog">
           <div class="container">
               <div class="row">
@@ -136,7 +136,7 @@
               </div>
 
           </div>
-      </div>
+      </div> --}}
 
 
       <div id="services" class="services section">
@@ -153,7 +153,7 @@
                                                   <span class="icon"><img
                                                           src="{{ asset('template/dashboard') }}/images/service-icon-01.png"
                                                           alt=""></span>
-                                                  Web Development
+                                                  Playground
                                               </div>
                                           </div>
                                           <div>
@@ -161,15 +161,15 @@
                                                   <span class="icon"><img
                                                           src="{{ asset('template/dashboard') }}/images/service-icon-02.png"
                                                           alt=""></span>
-                                                  Network & CCTV
+                                                 VR Simulator
                                               </div>
                                           </div>
                                           <div>
                                               <div class="thumb">
                                                   <span class="icon"><img
-                                                          src="{{ asset('template/dashboard') }}/images/service-icon-03.png"
+                                                          src="{{ asset('template/dashboard') }}/images/service-icon-01.png"
                                                           alt=""></span>
-                                                  Informasi Publik
+                                                  RainbowSlide
                                               </div>
                                           </div>
                                       </div>
@@ -182,29 +182,24 @@
                                                       <div class="row">
                                                           <div class="col-lg-6 align-self-center">
                                                               <div class="left-text">
-                                                                  <h4>Web Development</h4>
-                                                                  <p>Web development adalah proses membuat dan memelihara
-                                                                      situs web. Hal ini melibatkan penggunaan bahasa
-                                                                      pemrograman dan teknologi web untuk membuat halaman
-                                                                      web yang dapat diakses melalui internet.</p>
+                                                                  <h4>PlayGround</h4>
+                                                                  <p>playground dirancang dengan mempertimbangkan aspek keamanan untuk mencegah cedera saat bermain. Material yang digunakan biasanya ramah anak dan lantainya sering kali dilapisi dengan bahan yang empuk untuk mengurangi risiko cedera saat jatuh. Playground tidak hanya menyediakan sarana untuk bermain tetapi juga menjadi tempat anak-anak belajar berinteraksi, berbagi, dan bekerja sama dengan teman sebaya. Ini adalah lingkungan yang mendukung perkembangan fisik, emosional, dan sosial anak-anak melalui permainan yang menyenangkan dan edukatif.</p>
                                                                   <div class="ticks-list"><span><i
                                                                               class="fa fa-check"></i>
-                                                                          Perencanaan</span>
+                                                                          Ayunan</span>
                                                                       <span><i class="fa fa-check"></i>
-                                                                          Desain</span> <span><i class="fa fa-check"></i>
-                                                                          Pengembangan</span>
-                                                                      <span><i class="fa fa-check"></i> Uji Coba dan
-                                                                          Debugging</span>
-                                                                      <span><i class="fa fa-check"></i> Peluncuran</span>
-                                                                      <span><i class="fa fa-check"></i> Pemeliharaan</span>
+                                                                          Climbing</span> <span><i class="fa fa-check"></i>
+                                                                          Mini Rumah Pohon</span>
+                                                                      <span><i class="fa fa-check"></i> Kotak Pasir</span>
+                                                                      <span><i class="fa fa-check"></i> Car City</span>
+                                                                      <span><i class="fa fa-check"></i> Perosotan</span>
                                                                   </div>
 
                                                               </div>
                                                           </div>
                                                           <div class="col-lg-6 align-self-center">
                                                               <div class="right-image">
-                                                                  <img src="{{ asset('template/dashboard') }}/images/services-image.jpg"
-                                                                      alt="">
+                                                                <img src="{{ asset('img/playground.jpg')}}" alt="">
                                                               </div>
                                                           </div>
                                                       </div>
@@ -217,29 +212,21 @@
                                                       <div class="row">
                                                           <div class="col-lg-6 align-self-center">
                                                               <div class="left-text">
-                                                                  <h4>NETWORK & CCTV ENGINEER</h4>
-                                                                  <p>CCTV (Closed Circuit Television) dan Networking
-                                                                      Engineering adalah dua teknologi yang berkaitan erat
-                                                                      dengan keamanan dan pemantauan, yang memiliki peran
-                                                                      penting di era digital saat ini. CCTV digunakan untuk
-                                                                      merekam gambar dan suara di suatu tempat atau lokasi
-                                                                      tertentu, sedangkan Networking Engineering bertanggung
-                                                                      jawab untuk mengelola jaringan komputer dan sistem
-                                                                      informasi.</p>
+                                                                  <h4>VR Simulator</h4>
+                                                                  <p>VR simulator adalah sebuah sistem atau perangkat yang menggunakan teknologi Virtual Reality (VR) untuk menciptakan pengalaman simulasi yang sangat mirip dengan kenyataan atau menciptakan lingkungan virtual yang sepenuhnya imersif. Dengan menggunakan headset VR dan kadang-kadang perangkat tambahan seperti kontroler atau sensor gerakan, pengguna dapat berinteraksi dengan dunia virtual seolah-olah mereka benar-benar berada di dalamnya.</p>
                                                                   <div class="ticks-list"><span><i
                                                                               class="fa fa-check"></i>
-                                                                          Pemasangan</span>
+                                                                          Headset VR</span>
                                                                       <span><i class="fa fa-check"></i>
-                                                                          Pemantauan</span> <span><i
-                                                                              class="fa fa-check"></i> Pemeliharaan</span>
-                                                                      <span><i class="fa fa-check"></i> Wifi Publik</span>
+                                                                          Controller</span> <span><i
+                                                                              class="fa fa-check"></i>Sensor Gerak</span>
+
                                                                   </div>
                                                               </div>
                                                           </div>
                                                           <div class="col-lg-6 align-self-center">
                                                               <div class="right-image">
-                                                                  <img src="{{ asset('template/dashboard') }}/images/services-image-02.jpg"
-                                                                      alt="">
+                                                                <img src="{{ asset('img/vr.jpg')}}"alt="">
                                                               </div>
                                                           </div>
                                                       </div>
@@ -252,34 +239,14 @@
                                                       <div class="row">
                                                           <div class="col-lg-6 align-self-center">
                                                               <div class="left-text">
-                                                                  <h4>Informasi Publik</h4>
-                                                                  <p>Informasi publik adalah informasi yang dapat diakses
-                                                                      dan digunakan oleh masyarakat secara umum. Informasi
-                                                                      publik ini biasanya disediakan oleh pemerintah,
-                                                                      lembaga publik, dan organisasi lainnya yang
-                                                                      berhubungan dengan kepentingan umum. Dalam banyak
-                                                                      negara, hak akses terhadap informasi publik dijamin
-                                                                      oleh undang-undang, sehingga memungkinkan masyarakat
-                                                                      untuk memperoleh informasi yang diperlukan</p>
-                                                                  <div class="ticks-list"><span><i
-                                                                              class="fa fa-check"></i>
-                                                                          Berita Daerah</span>
-                                                                      <span><i class="fa fa-check"></i> Berita
-                                                                          Pemerintahan</span><span><i
-                                                                              class="fa fa-check"></i>
-                                                                          Data Statistik</span> <span><i
-                                                                              class="fa fa-check"></i> Laporan
-                                                                          Keuangan</span>
-                                                                      <span><i class="fa fa-check"></i> Kebijakan
-                                                                          Publik</span>
+                                                                  <h4>RainbowSlide</h4>
+                                                                  <p>Rainbow Slide adalah sebuah perosotan yang memiliki desain warna-warni yang mencolok, menyerupai warna pelangi. Perosotan ini biasanya terbuat dari bahan plastik yang halus dan kuat, serta dirancang dengan berbagai ukuran dan panjang untuk memenuhi kebutuhan anak-anak dari berbagai usia. Bagian perosotan mungkin berbentuk lurus atau bergelombang untuk menambah keseruan.</p>
 
-                                                                  </div>
                                                               </div>
                                                           </div>
                                                           <div class="col-lg-6 align-self-center">
                                                               <div class="right-image">
-                                                                  <img src="{{ asset('template/dashboard') }}/images/services-image-03.jpg"
-                                                                      alt="">
+                                                                <img src="{{ asset('img/rainbow.jpg')}}"alt="">
                                                               </div>
                                                           </div>
                                                       </div>
